@@ -97,4 +97,3 @@ ADR 0003 names generic endnotes as the main extraction risk. "Distinguishing the
 | 06 | Combined validation: rerun all checks together, cross-feature interruption matrix, single Android Back policy, user review of the hypotheses, results report, recommendation to keep, keep with limits, or reopen Readium | 02, 03, 04b, 05 |
 
 02, 03, 04a and 05 remain parallel after 01. Every ticket including 06 can be complete while the gate is still failed. The spec already says this; 06 should repeat it.
-

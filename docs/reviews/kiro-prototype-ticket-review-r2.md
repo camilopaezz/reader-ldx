@@ -58,4 +58,3 @@ These come from documents only, and I have not verified any of them:
 ## Dependencies
 
 No changes are needed: 01 → {02, 03, 04, 06}, 04 → 05, and {02, 03, 05, 06} → 07. The graph is accurate and has no hidden blocking edges, apart from the 02/03 menu overlap that fix B handles in wording.
-
