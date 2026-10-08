@@ -1,6 +1,6 @@
 # Android reader compatibility prototype
 
-Status: accepted for tracker publication; the testing boundary was confirmed by the user. This spec covers the Readium/StarDict validation gate, not the complete reader or server.
+Status: published as [GitHub issue #1](https://github.com/camilopaezz/reader-ldx/issues/1); the testing boundary was confirmed by the user. This spec covers the Readium/StarDict validation gate, not the complete reader or server.
 
 ## Problem Statement
 
