@@ -43,6 +43,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     var onNavigatorReady: suspend () -> Unit = {}
     var onAnnotationActivated: (String) -> Unit = {}
     var onCenterTap: () -> Unit = {}
+    var onPreviewPageTap: () -> Boolean = { false }
     var actionModeCallback: android.view.ActionMode.Callback? = null
 
     suspend fun open(record: BookRecord, container: Int, font: Double, margins: Double) {
@@ -88,6 +89,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         navigator.addInputListener(object : InputListener {
             override fun onTap(event: TapEvent): Boolean {
                 if (reflowing) return true
+                if (transient.value && onPreviewPageTap()) return true
                 val edge = navigator.publicationView.width * 0.3
                 if (event.point.x < edge || event.point.x > navigator.publicationView.width - edge) {
                     if (!transient.value) preserveAnchor = false
@@ -168,13 +170,37 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         } finally { reflowing = false }
     }
     /** Set suppression before initiating movement, never after an engine callback. */
-    fun preview(locator: Locator) { transient.value = true; clearSelection(); navigator.go(locator) }
+    fun preview(locator: Locator): Boolean { transient.value = true; clearSelection(); return navigator.go(locator, animated = false) }
     suspend fun cancelPreview() {
         val anchor = committed.value ?: return
         preserveAnchor = true
         navigator.go(anchor)
         awaitAnchorVisible(anchor)
         transient.value = false
+    }
+    suspend fun awaitPreviewDestination(anchor: Locator) {
+        val selector = anchor.locations.otherLocations["cssSelector"]?.toString()
+        if (selector != null) {
+            withTimeout(5000) { while (navigator.currentLocator.value.href != anchor.href) delay(50) }
+            awaitAnchorVisible(anchor)
+        } else {
+            val progression = anchor.locations.progression ?: 0.0
+            // Readium 3.1.2 scrollToPosition uses scrollingElement.scrollWidth * progression
+            // in this prototype's paginated, horizontal EPUB layout. Check that actual page.
+            val script = "(function(){var e=document.scrollingElement;if(!e||document.readyState!=='complete')return false;var w=e.scrollWidth,x=Math.abs(e.scrollLeft),p=w*" + progression + ";return w>0&&p>=x-2&&p<Math.min(w,x+innerWidth)+2})()"
+            withTimeout(8000) {
+                var matches = 0
+                var attempts = 0
+                while (matches < 3) {
+                    val matchesPage = navigator.currentLocator.value.href == anchor.href && navigator.evaluateJavascript(script) == "true"
+                    matches = if (matchesPage) matches + 1 else 0
+                    if (!matchesPage && attempts++ % 5 == 0) preview(anchor)
+                    delay(100)
+                }
+            }
+        }
+        val viewport = navigator.evaluateJavascript("(function(){var e=document.scrollingElement;return {offset:Math.abs(e.scrollLeft),width:e.scrollWidth,viewport:innerWidth}})()")
+        Log.i("ReaderEvidence", "PREVIEW_SETTLED requested=${anchor.toJSON()} viewport=$viewport rendered=${navigator.firstVisibleElementLocator()?.toJSON()}")
     }
     private suspend fun awaitAnchorVisible(anchor: Locator) {
         val selector = anchor.locations.otherLocations["cssSelector"]?.toString() ?: return
@@ -186,16 +212,35 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
             }
         }
     }
-    suspend fun commitPreview() {
-        val destination = navigator.firstVisibleElementLocator() ?: visible.value ?: return
-        saveCommit(destination)
+    suspend fun commitPreview(anchor: Locator? = null, persist: (suspend (Locator) -> Unit)? = null): Locator? {
+        val destination = anchor ?: navigator.firstVisibleElementLocator() ?: visible.value ?: return null
+        persistence.lock()
+        try {
+            if (persist == null) {
+                storage.books.commit(book?.id ?: return null, destination.toJSON().toString())
+            } else persist(destination)
+            committed.value = destination
+            Log.i("ReaderEvidence", "COMMITTED ${destination.toJSON()}")
+        } finally { persistence.unlock() }
         preserveAnchor = true
         transient.value = false
+        return destination
     }
     fun navigateCommitted(locator: Locator) { preserveAnchor = false; navigator.go(locator) }
     fun dismissBookNote() {
         Log.i("ReaderEvidence", "BOOK_NOTE_CLOSE target=${bookNote.value?.target} source=${committed.value?.toJSON()}")
         bookNote.value = null
+    }
+    fun sliderFraction(locator: Locator?): Float {
+        if (locator == null) return 0f
+        val index = publication.readingOrder.indexOfFirst { it.href.toString().substringBefore("#") == locator.href.toString().substringBefore("#") }.coerceAtLeast(0)
+        return ((index + (locator.locations.progression ?: 0.0)) / publication.readingOrder.size.coerceAtLeast(1)).toFloat()
+    }
+    fun sliderPositions(): List<Locator> = publication.readingOrder.flatMapIndexed { index, link ->
+        val base = publication.locatorFromLink(link) ?: return@flatMapIndexed emptyList()
+        (0..99).map { step -> base.copy(locations = base.locations.copy(
+            progression = step / 100.0,
+            totalProgression = (index + step / 100.0) / publication.readingOrder.size)) }
     }
     fun diagnosticDestination(): Locator? = publication.readingOrder.lastOrNull()?.let { publication.locatorFromLink(it) }
 }

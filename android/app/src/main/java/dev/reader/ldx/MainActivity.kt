@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var storage: ReaderStorage; private set
     lateinit var engine: ReadingEngine; private set
     lateinit var annotations: AnnotationController; private set
+    private lateinit var slider: SliderController
     private val containerId = 1001
     private var books by mutableStateOf<List<BookRecord>>(emptyList())
     private var controls by mutableStateOf(false)
@@ -71,6 +72,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(null)
         storage = ReaderStorage(this)
         engine = ReadingEngine(this, storage)
+        slider = SliderController(storage, engine, lifecycleScope)
+        engine.onPreviewPageTap = { slider.commitFromPage().also { if (it) controls = false } }
         dictionaries = DictionaryStore(File(filesDir, "dictionaries"))
         installedDictionaries = dictionaries.installed()
         onWordSelected = { selected -> showDictionary(selected) }
@@ -109,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                     annotations.dismiss() -> Unit
                     engine.bookNote.value != null -> engine.dismissBookNote()
                     dictionaryOpen -> dictionaryOpen = false
-                    engine.transient.value -> lifecycleScope.launch { engine.cancelPreview(); controls = false }
+                    engine.transient.value -> lifecycleScope.launch { guarded { if (slider.previewing) slider.cancel() else engine.cancelPreview(); controls = false } }
                     nativeSelectionMode != null || selectionInfo != null -> { selectionInfo = null; nativeSelectionMode?.finish(); engine.clearSelection() }
                     controls -> controls = false
                     !library -> { library = true; controls = false }
@@ -128,6 +131,7 @@ class MainActivity : AppCompatActivity() {
     }
     private suspend fun open(book: BookRecord) {
         engine.open(book, containerId, size, margins)
+        slider.opened()
         opened = book; library = false; controls = false; selectionInfo = null; dictionaryOpen = false
     }
     private suspend fun importBook(uri: Uri) {
@@ -203,15 +207,15 @@ class MainActivity : AppCompatActivity() {
                 Surface(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), tonalElevation = 8.dp) {
                     Column(Modifier.padding(12.dp)) {
                         Text(opened?.title.orEmpty(), style = MaterialTheme.typography.titleSmall)
-                        Text(if (preview) "Diagnostic preview, reading position unchanged" else "Committed reading")
+                        Text(if (preview) "Preview, saved reading position unchanged" else "Committed reading")
                         Text("Anchor: ${visible?.locations?.otherLocations?.get("cssSelector") ?: visible?.href}", style = MaterialTheme.typography.bodySmall)
                         Text(visible?.text?.highlight?.take(85).orEmpty(), style = MaterialTheme.typography.bodySmall)
                         Row {
-                            TextButton(enabled = !applyingTypography, onClick = { engine.page(false) }) { Text("Previous") }
-                            TextButton(enabled = !applyingTypography, onClick = { engine.page(true) }) { Text("Next") }
-                            TextButton(onClick = { library = true }) { Text("Fixtures") }
-                            TextButton(onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionary") }
-                            TextButton(onClick = { controls = false }) { Text("Close") }
+                            TextButton(enabled = !preview && !applyingTypography, onClick = { engine.page(false) }) { Text("Previous") }
+                            TextButton(enabled = !preview && !applyingTypography, onClick = { engine.page(true) }) { Text("Next") }
+                            TextButton(enabled = !preview, onClick = { library = true }) { Text("Fixtures") }
+                            TextButton(enabled = !preview, onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionary") }
+                            TextButton(enabled = !preview, onClick = { controls = false }) { Text("Close") }
                         }
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text("Aa ${size.toInt()}%")
@@ -224,8 +228,18 @@ class MainActivity : AppCompatActivity() {
                             TextButton(enabled = !annotations.busy, onClick = { lifecycleScope.launch { guarded { annotations.bookmark() } } }) { Text("Add bookmark") }
                         }
                         if (annotations.notice.isNotBlank()) Text(annotations.notice, style = MaterialTheme.typography.bodySmall)
-                        if (preview) TextButton(onClick = { lifecycleScope.launch { engine.cancelPreview() } }) { Text("Cancel preview") }
-                        else TextButton(onClick = { engine.diagnosticDestination()?.let { engine.preview(it) } }) { Text("Diagnostic non-committing move") }
+                        SliderUi(slider, committed,
+                            cancel = { lifecycleScope.launch { guarded { slider.cancel() } } },
+                            toggleReturn = { lifecycleScope.launch { guarded { slider.toggleReturn() } } })
+                        if (!preview) Text("Diagnostic jumps to last chapter", style = MaterialTheme.typography.bodySmall)
+                        if (!preview) Row {
+                            listOf("Chapter", "Search result", "Bookmark style").forEach { kind ->
+                                TextButton(onClick = { engine.diagnosticDestination()?.let { target ->
+                                    android.util.Log.i("ReaderEvidence", "DIAGNOSTIC_JUMP kind=$kind return=${slider.returnTarget?.toJSON()}")
+                                    engine.navigateCommitted(target)
+                                } }) { Text(kind) }
+                            }
+                        }
                         Text("Saved: ${committed?.locations?.otherLocations?.get("cssSelector") ?: committed?.href}", style = MaterialTheme.typography.bodySmall)
                     }
                 }
