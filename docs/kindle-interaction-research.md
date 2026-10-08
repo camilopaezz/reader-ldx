@@ -107,7 +107,7 @@ The accepted reader baseline remains an expandable, scrolling overlay for book n
 
 ## K04: Slider jumps and return controls
 
-Interview questions: Q36, Q39. Answered constraint: only moves with the bottom progress slider create reading back/forward history. Ordinary page turns, chapter jumps, search-result jumps, and bookmark jumps do not. Q39's detailed controls are delegated to this research and remain unanswered.
+Interview questions: Q36, Q39. Answered constraint: only moves with the bottom progress slider create reading back/forward history. Ordinary page turns, chapter jumps, search-result jumps, and bookmark jumps do not. Q39 was delegated to this research; the observations below establish Kindle's behavior, while the final reader-ldx controls remain proposals.
 
 - How is the slider revealed, and what previews appear while dragging?
 - Does the page move during a drag or only when it finishes?
@@ -141,7 +141,7 @@ Live-preview check: from page 11, run a five-second ADB slider swipe `175,2251` 
 
 Closing chrome by tapping the central page commits the chosen preview and hides the return control; reopening chrome exposes it again. Selecting the return before committing a new preview restores the prior reading position. The old marker can reappear, but this does not prove a multi-entry stack. Following the canceled/interrupted preview and subsequent footnote restart, page 11 was labelled both Current Location and Last visited page, with no separate Back to thumbnail in the accessibility tree. This limits any claim that every return marker persists. [Control snapshot](research/kindle/2026-10-07/k04-resume-controls.txt). History capacity, expiration across much longer sessions, and book removal are outside the observed sequence.
 
-Kindle creates return points for chapter, search, and bookmark jumps too. Keep our explicit slider-only rule. Proposed detailed controls are a visible return affordance near the slider and an explicit forward action for our accepted back/forward history. Store one source/destination pair per committed slider operation, group drag updates, retain history over page turns and local restart, and keep Android Back separate from traversal. Stack depth, commit-on-release versus preview confirmation, and exact forward presentation require a product decision; the observation cannot silently settle these by copying Kindle's toggle.
+Kindle creates return points for chapter, search, and bookmark jumps too. Keep our explicit slider-only rule. A visible return affordance near the slider is supported by observation. A separate forward button and multi-entry history have not been selected by the user or established by this session. Prototype proposals are one source/destination pair per committed slider operation, grouped drag updates, persistence over page turns and local restart, and Android Back separate from traversal. Stack depth, commit-on-release versus preview confirmation, and exact forward presentation remain choices; the observed two-position toggle is a candidate to try.
 
 ## K05: Highlights, bookmarks, and annotation notes
 

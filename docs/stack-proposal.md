@@ -1,6 +1,6 @@
 # Stack decisions
 
-The current product and stack questions are settled. Detailed reader interactions remain queued for Kindle observation, and accepted choices below are not proof that an integration has been tested. Application code has not begun.
+The core product and stack choices are settled. Kindle Android observation is recorded with remaining fixture and measurement limits. Slider commitment, history capacity, forward presentation, typography defaults, and warm-resume policy are still proposals. Accepted technologies are not proof of a tested integration; application code has not begun.
 
 ## Accepted Android stack
 
@@ -55,7 +55,7 @@ The [engine findings](engine-findings.md) support trying Readium and StarDict. T
 
 Dependency versions and minimum Android SDK are not selected. Pin compatible releases when the prototype is authorized and scaffolded.
 
-Observe the Kindle Android app before fixing detailed reader controls. [The dedicated research queue](kindle-interaction-research.md) includes both answered baselines and unresolved questions; no observation session has run yet.
+The [Kindle findings](kindle-interaction-research.md) distinguish user-selected baselines, observed behavior, and remaining questions. Follow [the Android prototype handoff](handoffs/android-reader-prototype.md) for the next gate. Use controlled fixtures for nested notes, relative images, cross-page selection, and reflow/resume checks that the Kindle session could not establish.
 
 ## Reference material
 

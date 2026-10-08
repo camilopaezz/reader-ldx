@@ -60,7 +60,7 @@ Support both definitions in the book's language and translations into another la
 
 Settled root: personal use, Android phones first, unencrypted EPUBs, Kindle-like interactions and appearance, offline core reading, local-first delivery followed soon by sync, and both monolingual and bilingual lookup.
 
-Current interview frontier: no unanswered product or stack questions. Q42 and Q43 are settled: preserve offline edits in trash without restoring the book, and download server-listed books on demand.
+Core product and stack choices are settled. Q42 and Q43 are settled: preserve offline edits in trash without restoring the book, and download server-listed books on demand. Research exposed remaining interaction choices: slider commit timing, history capacity and forward presentation, Android Back dismissal, typography defaults, and warm-resume policy. These are prototype proposals until settled, not additional accepted requirements.
 
 Research frontier: the [Kindle session](kindle-interaction-research.md) established immediate word lookup, source cards, selection and annotation menus, short/long footnote sheets, generic-link previews, live slider preview, return persistence, and settings controls. Nested note/image fixtures, cross-page selection, chapter boundaries, precise reflow anchors, and some interruption states remain unverified. Use [the prototype handoff](handoffs/android-reader-prototype.md) for the next engine gate.
 
@@ -93,4 +93,4 @@ Design branches and validation dependencies:
 
 Keep agreed product behavior here. Define settled domain terms in [GLOSSARY.md](../GLOSSARY.md). Record architectural decisions in docs/adr/ when a meaningful trade-off makes them costly to reverse. Create those records only after the decision is settled.
 
-The current product and stack questions are settled and recorded. Readium still requires prototype validation. Kindle Android observation has run; detailed proposals and unresolved interaction choices are linked above. Export is deferred; dependency versions, target Android SDK, and exact deployment reachability are implementation checks before the relevant work begins. Application implementation has not started.
+The core product and stack choices are recorded. Readium still requires prototype validation. Kindle Android observation has run; detailed proposals and unresolved interaction choices are linked above. Export is deferred; dependency versions, target Android SDK, and exact deployment reachability are implementation checks before the relevant work begins. Application implementation has not started.
