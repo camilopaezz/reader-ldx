@@ -1,0 +1,9 @@
+{
+  "file": "generic-notes.epub",
+  "sha256": "1a8c8f0bb29d9e487be9a3754f9da6136f019d12b1adeef1041ec2fa6ee7ec6d",
+  "source": "Authored by Reader LDX prototype contributors; generate_generic_notes.py",
+  "license": "CC0-1.0",
+  "language": "en",
+  "source_anchor": "EPUB/source.xhtml#source-heading",
+  "image": "EPUB/images/note.png"
+}

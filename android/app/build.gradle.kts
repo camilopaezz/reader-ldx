@@ -14,6 +14,7 @@ android {
     packaging { resources.excludes.add("META-INF/*") }
 }
 dependencies {
+    implementation("org.jsoup:jsoup:1.18.1")
     implementation("org.readium.kotlin-toolkit:readium-shared:3.1.2")
     implementation("org.readium.kotlin-toolkit:readium-streamer:3.1.2")
     implementation("org.readium.kotlin-toolkit:readium-navigator:3.1.2")
