@@ -15,6 +15,7 @@ android {
 }
 dependencies {
     implementation("org.jsoup:jsoup:1.18.1")
+    testImplementation("junit:junit:4.13.2")
     implementation("org.readium.kotlin-toolkit:readium-shared:3.1.2")
     implementation("org.readium.kotlin-toolkit:readium-streamer:3.1.2")
     implementation("org.readium.kotlin-toolkit:readium-navigator:3.1.2")
