@@ -26,6 +26,7 @@ import java.security.MessageDigest
 class MainActivity : AppCompatActivity() {
     lateinit var storage: ReaderStorage; private set
     lateinit var engine: ReadingEngine; private set
+    lateinit var annotations: AnnotationController; private set
     private val containerId = 1001
     private var books by mutableStateOf<List<BookRecord>>(emptyList())
     private var controls by mutableStateOf(false)
@@ -49,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(null)
         storage = ReaderStorage(this)
         engine = ReadingEngine(this, storage)
+        annotations = AnnotationController(AnnotationStore(this), engine)
+        selectionActions["Highlight"] = { selection -> selectionInfo = null; annotations.begin(selection, false) }
+        selectionActions["Annotation note"] = { selection -> selectionInfo = null; annotations.begin(selection, true) }
         engine.onCenterTap = { controls = !controls }
         engine.actionModeCallback = object : ActionMode.Callback {
             override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
@@ -77,6 +81,7 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 when {
+                    annotations.dismiss() -> Unit
                     engine.transient.value -> lifecycleScope.launch { engine.cancelPreview(); controls = false }
                     nativeSelectionMode != null || selectionInfo != null -> { selectionInfo = null; nativeSelectionMode?.finish(); engine.clearSelection() }
                     controls -> controls = false
@@ -164,6 +169,11 @@ class MainActivity : AppCompatActivity() {
                             TextButton(enabled = !preview && !applyingTypography, onClick = { size = (size + 20).coerceAtMost(220.0); applyTypography() }) { Text("Larger") }
                             TextButton(enabled = !preview && !applyingTypography, onClick = { margins = if (margins == 1.0) 2.0 else 1.0; applyTypography() }) { Text("Margins") }
                         }
+                        if (!preview) Row {
+                            TextButton(onClick = { annotations.showList = true }) { Text("Annotations") }
+                            TextButton(enabled = !annotations.busy, onClick = { lifecycleScope.launch { guarded { annotations.bookmark() } } }) { Text("Add bookmark") }
+                        }
+                        if (annotations.notice.isNotBlank()) Text(annotations.notice, style = MaterialTheme.typography.bodySmall)
                         if (preview) TextButton(onClick = { lifecycleScope.launch { engine.cancelPreview() } }) { Text("Cancel preview") }
                         else TextButton(onClick = { engine.diagnosticDestination()?.let { engine.preview(it) } }) { Text("Diagnostic non-committing move") }
                         Text("Saved: ${committed?.locations?.otherLocations?.get("cssSelector") ?: committed?.href}", style = MaterialTheme.typography.bodySmall)
@@ -181,6 +191,8 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            AnnotationUi(annotations, save = { record -> lifecycleScope.launch { guarded { annotations.save(record) } } },
+                remove = { record -> lifecycleScope.launch { guarded { annotations.remove(record) } } })
             if (message.isNotEmpty()) AlertDialog(onDismissRequest = { message = "" }, title = { Text("Reader error") }, text = { Text(message) }, confirmButton = { TextButton(onClick = { message = "" }) { Text("Close") } })
         }
     }
