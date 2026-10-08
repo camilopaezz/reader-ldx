@@ -35,6 +35,27 @@ class MainActivity : AppCompatActivity() {
     private var size by mutableStateOf(100.0)
     private var margins by mutableStateOf(1.0)
     private var selectionInfo by mutableStateOf<Selection?>(null)
+    private lateinit var dictionaries: DictionaryStore
+    private var installedDictionaries by mutableStateOf<List<DictionaryInfo>>(emptyList())
+    private var dictionaryOpen by mutableStateOf(false)
+    private var dictionarySelection by mutableStateOf<Selection?>(null)
+    private var dictionaryResult by mutableStateOf<DictionaryMatch?>(null)
+    private var currentDictionary by mutableStateOf<DictionaryInfo?>(null)
+    private var dictionaryBusy by mutableStateOf(false)
+    private var dictionarySource by mutableStateOf("es")
+    private var dictionaryTarget by mutableStateOf("es")
+    private val importDictionary = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri?.let { lifecycleScope.launch { dictionaryBusy = true; try { guarded {
+            val staged = File(cacheDir, "dictionary.zip")
+            val imported = withContext(Dispatchers.IO) {
+                contentResolver.openInputStream(it)?.use { input -> staged.outputStream().use { input.copyTo(it) } } ?: error("Unable to read dictionary")
+                dictionaries.importPackage(staged, dictionarySource, dictionaryTarget)
+            }
+            installedDictionaries = withContext(Dispatchers.IO) { dictionaries.installed() }
+            message = "Dictionary imported: ${imported.name}"
+            android.util.Log.i("ReaderEvidence", "DICTIONARY_IMPORTED id=${imported.id} name=${imported.name} source=${imported.source} target=${imported.target}")
+        } } finally { dictionaryBusy = false } } }
+    }
     private var typographyJob: Job? = null
     private var applyingTypography by mutableStateOf(false)
     private var nativeSelectionMode: ActionMode? = null
@@ -49,6 +70,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(null)
         storage = ReaderStorage(this)
         engine = ReadingEngine(this, storage)
+        dictionaries = DictionaryStore(File(filesDir, "dictionaries"))
+        installedDictionaries = dictionaries.installed()
+        onWordSelected = { selected -> showDictionary(selected) }
+        selectionActions["Dictionary lookup"] = { selected -> selectionInfo = null; showDictionary(selected) }
         engine.onCenterTap = { controls = !controls }
         engine.actionModeCallback = object : ActionMode.Callback {
             override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
@@ -60,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             }
             override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean = false
             override fun onActionItemClicked(mode: ActionMode, item: MenuItem): Boolean {
-                lifecycleScope.launch { selectionInfo = engine.refreshSelection() }
+                lifecycleScope.launch { dictionaryOpen = false; selectionInfo = engine.refreshSelection() }
                 return true
             }
             override fun onDestroyActionMode(mode: ActionMode) { nativeSelectionMode = null; selectionInfo = null; engine.selection.value = null }
@@ -77,6 +102,7 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 when {
+                    dictionaryOpen -> dictionaryOpen = false
                     engine.transient.value -> lifecycleScope.launch { engine.cancelPreview(); controls = false }
                     nativeSelectionMode != null || selectionInfo != null -> { selectionInfo = null; nativeSelectionMode?.finish(); engine.clearSelection() }
                     controls -> controls = false
@@ -96,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
     private suspend fun open(book: BookRecord) {
         engine.open(book, containerId, size, margins)
-        opened = book; library = false; controls = false; selectionInfo = null
+        opened = book; library = false; controls = false; selectionInfo = null; dictionaryOpen = false
     }
     private suspend fun importBook(uri: Uri) {
         val staged = File(cacheDir, "import.epub")
@@ -122,6 +148,22 @@ class MainActivity : AppCompatActivity() {
         books = storage.books.all()
         open(storage.books.get(id)!!)
     }
+    private fun sortedDictionaries(): List<DictionaryInfo> {
+        val language = opened?.language?.substringBefore('-')
+        return installedDictionaries.sortedBy { if (it.source == language && it.target == language) 0 else if (it.source == language) 1 else 2 }
+    }
+    private fun showDictionary(selected: Selection) {
+        dictionarySelection = selected; dictionaryOpen = true; dictionaryResult = null
+        sortedDictionaries().firstOrNull()?.let { lookupDictionary(it, selected.locator.text.highlight.orEmpty()) }
+    }
+    private fun lookupDictionary(info: DictionaryInfo, text: String) {
+        lifecycleScope.launch { dictionaryBusy = true; try { guarded {
+            currentDictionary = info
+            val started = System.nanoTime()
+            dictionaryResult = withContext(Dispatchers.IO) { dictionaries.lookup(info, text) }
+            android.util.Log.i("ReaderEvidence", "LOOKUP selected=$text source=${info.source} target=${info.target} headword=${dictionaryResult?.headword} kind=${dictionaryResult?.kind} elapsedMs=${(System.nanoTime() - started) / 1_000_000}")
+        } } finally { dictionaryBusy = false } }
+    }
     private fun applyTypography() {
         if (applyingTypography) return
         applyingTypography = true
@@ -143,6 +185,7 @@ class MainActivity : AppCompatActivity() {
                         Button(onClick = { lifecycleScope.launch { guarded { importFixture("es") } } }) { Text("Import Spanish fixture") }
                     }
                     Button(onClick = { lifecycleScope.launch { guarded { importFixture("en") } } }) { Text("Import English fixture") }
+                    TextButton(onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionaries") }
                     books.forEach { book -> TextButton(onClick = { lifecycleScope.launch { guarded { open(book) } } }) { Text("${book.title} [${book.language}]") } }
                 }
             } else if (controls || preview) {
@@ -156,6 +199,7 @@ class MainActivity : AppCompatActivity() {
                             TextButton(enabled = !applyingTypography, onClick = { engine.page(false) }) { Text("Previous") }
                             TextButton(enabled = !applyingTypography, onClick = { engine.page(true) }) { Text("Next") }
                             TextButton(onClick = { library = true }) { Text("Fixtures") }
+                            TextButton(onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionary") }
                             TextButton(onClick = { controls = false }) { Text("Close") }
                         }
                         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -181,7 +225,13 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            if (message.isNotEmpty()) AlertDialog(onDismissRequest = { message = "" }, title = { Text("Reader error") }, text = { Text(message) }, confirmButton = { TextButton(onClick = { message = "" }) { Text("Close") } })
+            if (dictionaryOpen) Box(Modifier.align(Alignment.BottomCenter)) {
+                DictionaryPanel(sortedDictionaries(), dictionarySelection?.locator?.text?.highlight.orEmpty(), dictionaryResult, currentDictionary,
+                    dictionaryBusy, dictionarySource, dictionaryTarget, { source, target -> dictionarySource = source; dictionaryTarget = target },
+                    { importDictionary.launch(arrayOf("application/zip", "application/octet-stream")) }, ::lookupDictionary,
+                    dictionarySelection?.let { { lifecycleScope.launch { dictionaryOpen = false; selectionInfo = engine.refreshSelection() ?: dictionarySelection } } }, { dictionaryOpen = false })
+            }
+            if (message.isNotEmpty()) AlertDialog(onDismissRequest = { message = "" }, title = { Text(if (message.startsWith("Dictionary imported:")) "Dictionary imported" else "Reader error") }, text = { Text(message) }, confirmButton = { TextButton(onClick = { message = "" }) { Text("Close") } })
         }
     }
 }

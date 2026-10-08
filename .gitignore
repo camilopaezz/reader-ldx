@@ -4,3 +4,5 @@ android/.gradle/
 android/.kotlin/
 android/**/build/
 android/local.properties
+# Reproducibly acquired complete upstream dictionaries, not repository assets
+fixtures/dictionaries/downloaded/
