@@ -1,0 +1,5 @@
+--------- beginning of main
+10-08 14:56:59.201  4429  4429 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 14:57:01.380  4429  4429 I ReaderEvidence: VISIBLE {"href":"EPUB\/chapter1.xhtml","type":"application\/xhtml+xml","title":"El jardín de las palabras","locations":{"cssSelector":"#p-1-14","progression":0.5001543686322939,"position":1,"totalProgression":0},"text":{"highlight":"Pasaje 1.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."}}
+10-08 14:57:01.391  4429  4429 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 14:59:31.984  4429  4429 I ReaderEvidence: DICTIONARY_IMPORTED id=ea80cc791b76c8a40d6d770e0d71a67d3e9075a1be98033883e7ce4f50ac71b7 name=Wikcionario Español-Español source=es target=es

@@ -56,3 +56,7 @@ Cross-chapter selection, arbitrary EPUB markup, a range containing a note link, 
 ## Provisional choices and remaining limits
 
 Explicit Save is the durability boundary. Cancel and Android Back discard an unsaved editor draft. A saved note decorates its selected passage with the same highlight mechanism. The list groups by chapter label from the EPUB contents, falling back to locator title/resource name. Grouping and this combined editor need owner review. Bookmark/list navigation is ordinary committed navigation. Combined lookup/menu and slider-history checks belong to #8.
+
+## Integrated menu routing
+
+The parent integrated #4 with dictionary and marked-note source at `0cc922d`. The resumed #3 Android run reached both Highlight and the dedicated Annotation note action from the lookup passage menu on the real native `canción` selection; the editor retained the original selected spelling. See [shared registry](../issue-3/passage-actions-integrated.png) and [dedicated note editor](../issue-3/annotation-note-reachable.png). Integrated source plus dictionary scan optimization was rebuilt with the focused public dictionary checks successfully in16s. This closes the direct menu-route evidence gap; the controlled cross-page selection failure remains, and actual slider/history and other combined checks remain #8.
