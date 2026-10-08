@@ -1,0 +1,32 @@
+[
+  {
+    "path": "fixtures/epub/foundation-es.epub",
+    "sha256": "36810f2582410c8d08f9059fd876539570ea62b12a15713e7bae69968e9af18f",
+    "language": "es",
+    "source": "Authored by Reader LDX prototype contributors, 2026-10-08",
+    "licence": "CC0-1.0",
+    "acquisition": "python3 fixtures/epub/generate.py",
+    "identifier": "urn:reader-ldx:foundation:es:v1",
+    "anchors": [
+      "EPUB/chapter1.xhtml#lead-1",
+      "EPUB/chapter1.xhtml#p-1-06",
+      "EPUB/chapter1.xhtml#p-1-24",
+      "EPUB/chapter2.xhtml#chapter-2"
+    ]
+  },
+  {
+    "path": "fixtures/epub/foundation-en.epub",
+    "sha256": "06910accd7896736ece527c4ed56c682dbb8ef7e8661cae3f01ed802933e89fc",
+    "language": "en",
+    "source": "Authored by Reader LDX prototype contributors, 2026-10-08",
+    "licence": "CC0-1.0",
+    "acquisition": "python3 fixtures/epub/generate.py",
+    "identifier": "urn:reader-ldx:foundation:en:v1",
+    "anchors": [
+      "EPUB/chapter1.xhtml#lead-1",
+      "EPUB/chapter1.xhtml#p-1-06",
+      "EPUB/chapter1.xhtml#p-1-24",
+      "EPUB/chapter2.xhtml#chapter-2"
+    ]
+  }
+]
