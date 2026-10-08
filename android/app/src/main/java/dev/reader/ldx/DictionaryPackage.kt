@@ -82,11 +82,11 @@ class DictionaryStore(private val root: File) {
         val stem = p.getProperty("stem")
         val found = mutableListOf<Triple<String, Long, Int>>()
         var kind = "Exact match"
-        entries(File(info.directory, "$stem.idx")) { word, offset, length -> if (word == selected) found += Triple(word, offset, length) }
+        entries(File(info.directory, "$stem.idx"), selected) { word, offset, length -> if (word == selected) found += Triple(word, offset, length) }
         if (found.isEmpty()) {
             val syn = File(info.directory, "$stem.syn")
             val targets = mutableSetOf<Int>()
-            if (syn.exists()) synonyms(syn) { alias, index -> if (alias == selected) targets += index }
+            if (syn.exists()) synonyms(syn, selected) { alias, index -> if (alias == selected) targets += index }
             if (targets.isNotEmpty()) {
                 var index = 0
                 entries(File(info.directory, "$stem.idx")) { word, offset, length -> if (index++ in targets) found += Triple(word, offset, length) }
@@ -99,25 +99,35 @@ class DictionaryStore(private val root: File) {
         }
         return DictionaryMatch(selected, found.map { it.first }.distinct().joinToString(", "), definitions.joinToString(if (p.getProperty("format") == "m") "\n\n" else "<hr/>"), kind, p.getProperty("format"))
     }
-    private fun synonyms(file: File, action: (String, Int) -> Unit) {
-        DataInputStream(file.inputStream().buffered()).use { input ->
-            while (true) {
-                val first = input.read(); if (first < 0) break
-                val word = ByteArrayOutputStream(); var b = first
-                while (b != 0) { require(b >= 0 && word.size() < 4096) { "Truncated synonym" }; word.write(b); b = input.read() }
-                action(Charsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(word.toByteArray())).toString(), input.readInt())
-            }
-        }
+    // Index and synonym files are small compared with dictionary data. Scan bounded buffers,
+    // comparing UTF-8 bytes first during lookup, so absent words do not allocate a million strings.
+    private fun synonyms(file: File, wanted: String? = null, action: (String, Int) -> Unit) {
+        scan(file, false, wanted) { word, index, _ -> action(word, index) }
     }
-    private fun entries(file: File, action: (String, Long, Int) -> Unit) {
-        DataInputStream(file.inputStream().buffered()).use { input ->
-            while (true) {
-                val first = input.read(); if (first < 0) break
-                val word = ByteArrayOutputStream(); var b = first
-                while (b != 0) { require(b >= 0 && word.size() < 4096) { "Truncated or oversized index headword" }; word.write(b); b = input.read() }
-                val offset = input.readInt().toLong() and 0xffffffffL
-                val length = input.readInt(); require(length in 0..(4 * 1024 * 1024)) { "Unsupported entry size" }
-                action(Charsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(word.toByteArray())).toString(), offset, length)
+    private fun entries(file: File, wanted: String? = null, action: (String, Long, Int) -> Unit) {
+        scan(file, true, wanted) { word, offset, length -> action(word, offset.toLong() and 0xffffffffL, length) }
+    }
+    private fun scan(file: File, lengths: Boolean, wanted: String?, action: (String, Int, Int) -> Unit) {
+        require(file.length() <= 64L * 1024 * 1024) { "Index or synonym file exceeds supported 64 MiB" }
+        val data = file.readBytes()
+        val query = wanted?.toByteArray(Charsets.UTF_8)
+        var at = 0
+        fun number(position: Int): Int = ((data[position].toInt() and 255) shl 24) or
+            ((data[position + 1].toInt() and 255) shl 16) or ((data[position + 2].toInt() and 255) shl 8) or (data[position + 3].toInt() and 255)
+        while (at < data.size) {
+            val start = at
+            while (at < data.size && data[at] != 0.toByte()) { at++; require(at - start < 4096) { "Oversized headword" } }
+            require(at < data.size && at + (if (lengths) 9 else 5) <= data.size) { "Truncated index or synonym" }
+            val end = at++
+            val offset = number(at); at += 4
+            val length = if (lengths) number(at).also { at += 4 } else 0
+            if (lengths) require(length in 0..(4 * 1024 * 1024)) { "Unsupported entry size" }
+            val matches = query == null || (query.size == end - start && query.indices.all { query[it] == data[start + it] })
+            if (matches) {
+                val word = String(data, start, end - start, Charsets.UTF_8)
+                // Replacement characters can be valid input; strictly decode only this rare case.
+                if ('\ufffd' in word) Charsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(data, start, end - start))
+                action(word, offset, length)
             }
         }
     }
