@@ -1,0 +1,12 @@
+10-08 15:19:43.842 11633 11633 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 15:19:44.515 11633 11633 I ReaderEvidence: VISIBLE {"href":"EPUB\/chapter2.xhtml","type":"application\/xhtml+xml","title":"Chapter 2","locations":{"cssSelector":"#chapter-2","progression":0,"position":2,"totalProgression":0.5},"text":{"highlight":"The garden of words 2"}}
+10-08 15:19:44.516 11633 11633 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 15:20:07.252 11633 11633 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 15:20:08.018 11633 11633 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 15:20:08.360 11633 11633 I ReaderEvidence: VISIBLE {"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}}
+10-08 15:20:08.360 11633 11633 I ReaderEvidence: ANNOTATION_RENDERED []
+10-08 15:20:08.362 11633 11633 I ReaderEvidence: COMMITTED {"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}}
+10-08 15:20:16.380 11633 11633 I ReaderEvidence: BOOK_NOTE_OPEN target=EPUB/notes/endnotes.xhtml#endnote-1 displayed={"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}} sourceTarget=EPUB/source.xhtml#generic-ref committed={"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}}
+10-08 15:20:16.858 11633 11757 I ReaderEvidence: NOTE_RESOURCE path=EPUB/images/note.png bytes=312
+10-08 15:20:17.446 11633 11758 I ReaderEvidence: NOTE_RESOURCE path=favicon.ico bytes=0
+10-08 15:20:25.523 11633 11757 I ReaderEvidence: NOTE_RESOURCE path=favicon.ico bytes=0

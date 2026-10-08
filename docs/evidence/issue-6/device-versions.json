@@ -1,0 +1,10 @@
+{
+  "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:16/BE2A.250530.026.D1/13818094:user/release-keys\n",
+  "size": "Physical size: 1080x2400\n",
+  "density": "Physical density: 420\n",
+  "webview": "Current WebView Update Service state\n  Current WebView package (name, version): (com.google.android.webview, 133.0.6943.137)\n  Minimum targetSdkVersion: 33\n  Minimum WebView version code: 694313738\n  Number of relros started: 1\n  Number of relros finished: 1\n  WebView package dirty: false\n  Any WebView package installed: true\n  Preferred WebView package (name, version): (com.google.android.webview, 133.0.6943.137)\n  WebView packages:\n    Valid package com.google.android.webview (versionName: 133.0.6943.137, versionCode: 694313738, targetSdkVersion: 34) is  installed/enabled for all users\n    com.google.android.webview.beta is NOT installed.\n    com.google.android.webview.dev is NOT installed.\n    com.google.android.webview.canary is NOT installed.\n    com.google.android.webview.debug is NOT installed.\n    com.android.webview is NOT installed.\n",
+  "wifi": "0\n",
+  "mobile_data": "0\n",
+  "app": "versionCode=1 minSdk=23 targetSdk=36\nversionName=0.1.0",
+  "preferences": "reader-preferences.preferences_pb\n"
+}
