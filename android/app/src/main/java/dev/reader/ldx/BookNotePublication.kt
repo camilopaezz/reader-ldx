@@ -29,6 +29,12 @@ class BookNotePublication(private val file: File) {
         val clone = element.clone()
         clone.select("script, iframe, object, embed, style, link, base, meta").remove()
         clone.getAllElements().forEach { node -> node.attributes().asList().filter { it.key.startsWith("on") || it.key == "style" }.forEach { node.removeAttr(it.key) } }
+        // Same-document fragments do not reliably reach WebViewClient. Use an app-owned
+        // scheme while retaining the resolved publication target, without enabling scripts.
+        clone.select("a[href]").forEach { anchor ->
+            val resolved = resolve(target, anchor.attr("href"))
+            if (resolved.isNotEmpty()) anchor.attr("href", "reader-note://follow?target=" + java.net.URLEncoder.encode(resolved, "UTF-8"))
+        }
         return clone.outerHtml()
     }
     fun resource(target: String): ByteArray? {

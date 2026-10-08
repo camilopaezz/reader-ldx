@@ -35,7 +35,7 @@ fun BookNoteOverlay(note: BookNote, resources: BookNotePublication?, follow: (St
                         isVerticalScrollBarEnabled = true
                         // Only publication resources are served; network and active content stay disabled.
                         webViewClient = object : android.webkit.WebViewClient() {
-                            override fun shouldOverrideUrlLoading(view: WebView, request: android.webkit.WebResourceRequest): Boolean { follow(request.url.toString()); return true }
+                            override fun shouldOverrideUrlLoading(view: WebView, request: android.webkit.WebResourceRequest): Boolean { follow(request.url.getQueryParameter("target") ?: request.url.toString()); return true }
                             override fun shouldInterceptRequest(view: WebView, request: android.webkit.WebResourceRequest): android.webkit.WebResourceResponse? {
                                 val uri = request.url
                                 if (uri.host != "publication.invalid") return android.webkit.WebResourceResponse("text/plain", "UTF-8", java.io.ByteArrayInputStream(byteArrayOf()))
