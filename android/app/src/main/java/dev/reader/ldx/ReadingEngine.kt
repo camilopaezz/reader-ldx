@@ -7,6 +7,8 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 import org.json.JSONObject
+import org.readium.r2.navigator.Decoration
+import org.readium.r2.navigator.DecorableNavigator
 import org.readium.r2.navigator.Selection
 import org.readium.r2.navigator.epub.*
 import org.readium.r2.navigator.input.*
@@ -38,6 +40,8 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     private var containerId = 0
     private var generation = 0
     private val persistence = kotlinx.coroutines.sync.Mutex()
+    var onNavigatorReady: suspend () -> Unit = {}
+    var onAnnotationActivated: (String) -> Unit = {}
     var onCenterTap: () -> Unit = {}
     var actionModeCallback: android.view.ActionMode.Callback? = null
 
@@ -99,6 +103,13 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         navigator.addInputListener(object : InputListener {
             override fun onTap(event: TapEvent): Boolean { onCenterTap(); return true }
         })
+        navigator.addDecorationListener("annotations", object : DecorableNavigator.Listener {
+            override fun onDecorationActivated(event: DecorableNavigator.OnActivatedEvent): Boolean {
+                onAnnotationActivated(event.decoration.id)
+                return true
+            }
+        })
+        onNavigatorReady()
         storage.opened(record.id)
         observer = scope.launch {
             // Readium notifies settled page locations; obtain its stable first visible HTML block.
@@ -112,6 +123,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
                 )
                 visible.value = located
                 Log.i("ReaderEvidence", "VISIBLE ${located.toJSON()}")
+                logAnnotationRanges()
                 if (bookNote.value == null && !transient.value && !reflowing && !preserveAnchor) saveCommit(located)
             }
         }
@@ -129,6 +141,14 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     suspend fun refreshSelection(): Selection? = navigator.currentSelection().also {
         selection.value = it
         it?.let { Log.i("ReaderEvidence", "SELECTION ${it.locator.toJSON()}") }
+    }
+    suspend fun applyAnnotationDecorations(decorations: List<Decoration>) {
+        require(navigator.supportsDecorationStyle(Decoration.Style.Highlight::class)) { "Highlights are unsupported by this navigator" }
+        navigator.applyDecorations(decorations, "annotations")
+    }
+    suspend fun logAnnotationRanges() {
+        val script = "(function(){if(!window.readium)return null;return readium.getDecorations('annotations').items.map(function(i){return {id:i.decoration.id,text:i.range.toString(),startElement:i.range.startContainer.parentElement.id,startOffset:i.range.startOffset,endElement:i.range.endContainer.parentElement.id,endOffset:i.range.endOffset,boxes:i.container?i.container.children.length:0}})})()"
+        Log.i("ReaderEvidence", "ANNOTATION_RENDERED " + navigator.evaluateJavascript(script))
     }
     fun clearSelection() { navigator.clearSelection(); selection.value = null }
     fun page(forward: Boolean) { if (bookNote.value != null || reflowing) return; if (!transient.value) preserveAnchor = false; if (forward) navigator.goForward() else navigator.goBackward() }
