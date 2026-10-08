@@ -34,6 +34,8 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     val selection = MutableStateFlow<Selection?>(null)
     val transient = MutableStateFlow(false)
     val bookNote = MutableStateFlow<BookNote?>(null)
+    var notePublication: BookNotePublication? = null; private set
+    private val noteHistory = mutableListOf<BookNote>()
     private var observer: Job? = null
     private var reflowing = false
     private var preserveAnchor = false
@@ -57,6 +59,8 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         val asset = assets.retrieve(File(record.path).toUrl()).getOrElse { error("EPUB import failed: $it") }
         publication = PublicationOpener(DefaultPublicationParser(activity, httpClient = http, assetRetriever = assets, pdfFactory = null)).open(asset, allowUserInteraction = false).getOrElse { error("Cannot open EPUB: $it") }
         require(!publication.isRestricted) { "Encrypted publications are outside this prototype" }
+        notePublication = withContext(Dispatchers.IO) { BookNotePublication(File(record.path)) }
+        noteHistory.clear()
         book = record
         val locator = record.committedLocator?.let { Locator.fromJSON(JSONObject(it)) }
         preserveAnchor = locator != null
@@ -70,14 +74,30 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
             listener = object : EpubNavigatorFragment.Listener {
                 override fun onExternalLinkActivated(url: org.readium.r2.shared.util.AbsoluteUrl) { Log.i("ReaderEvidence", "EXTERNAL_LINK unsupported=$url") }
                 override fun shouldFollowInternalLink(link: Link, context: org.readium.r2.navigator.HyperlinkNavigator.LinkContext?): Boolean {
-                    if (context is org.readium.r2.navigator.HyperlinkNavigator.FootnoteContext) {
-                        bookNote.value = BookNote(link.href.toString(), context.noteContent, committed.value)
-                        Log.i("ReaderEvidence", "BOOK_NOTE_OPEN target=${link.href} source=${committed.value?.toJSON()}")
-                        return false
+                    val tappedNavigator = navigator
+                    val tappedPublication = publication
+                    val tappedNotes = notePublication
+                    val displayed = visible.value
+                    val target = tappedNotes?.resolve(displayed?.href?.toString().orEmpty(), link.href.toString()).orEmpty()
+                    scope.launch {
+                        if (gen != generation) return@launch
+                        val raw = tappedNavigator.evaluateJavascript("window.__readerNoteSource || ''").orEmpty()
+                        val reference = runCatching { org.json.JSONArray("[$raw]").getString(0) }.getOrDefault("")
+                        val sourceTarget = tappedNotes?.resolve(displayed?.href?.toString().orEmpty(), reference).orEmpty()
+                        val html = withContext(Dispatchers.IO) { tappedNotes?.extract(target, context is org.readium.r2.navigator.HyperlinkNavigator.FootnoteContext) }
+                        if (gen != generation) return@launch
+                        if (html != null) {
+                            noteHistory.clear()
+                            bookNote.value = BookNote(target, html, displayed, sourceTarget)
+                            Log.i("ReaderEvidence", "BOOK_NOTE_OPEN target=$target displayed=${displayed?.toJSON()} sourceTarget=$sourceTarget committed=${committed.value?.toJSON()}")
+                        } else {
+                            if (!transient.value && !reflowing) preserveAnchor = false
+                            Log.i("ReaderEvidence", "ORDINARY_LINK target=${link.href}")
+                            tappedPublication.locatorFromLink(link)?.let { tappedNavigator.go(it) }
+                        }
                     }
-                    if (!transient.value && !reflowing) preserveAnchor = false
-                    Log.i("ReaderEvidence", "ORDINARY_LINK target=${link.href}")
-                    return true
+                    // Delay navigation until target classification finishes off the UI thread.
+                    return false
                 }
             },
             configuration = EpubNavigatorFragment.Configuration { selectionActionModeCallback = actionModeCallback }
@@ -122,6 +142,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
                     text = anchor?.text ?: current.text
                 )
                 visible.value = located
+                navigator.evaluateJavascript("(function(){if(window.__readerNoteCapture)return;window.__readerNoteCapture=true;document.addEventListener('click',function(e){var a=e.target.closest('a');if(a)window.__readerNoteSource=(a.id?'#'+a.id:'');},true);})()")
                 Log.i("ReaderEvidence", "VISIBLE ${located.toJSON()}")
                 logAnnotationRanges()
                 if (bookNote.value == null && !transient.value && !reflowing && !preserveAnchor) saveCommit(located)
@@ -193,7 +214,43 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         transient.value = false
     }
     fun navigateCommitted(locator: Locator) { preserveAnchor = false; navigator.go(locator) }
+    fun followBookNote(href: String) {
+        val note = bookNote.value ?: return
+        val target = notePublication?.resolve(note.target, href).orEmpty()
+        if (target == note.sourceTarget && target.isNotEmpty()) { dismissBookNote(); return }
+        val previous = noteHistory.indexOfLast { it.target == target }
+        if (previous >= 0) {
+            bookNote.value = noteHistory[previous]
+            while (noteHistory.size > previous) noteHistory.removeAt(noteHistory.lastIndex)
+            Log.i("ReaderEvidence", "BOOK_NOTE_BACKLINK target=$target committed=${committed.value?.toJSON()}")
+            return
+        }
+        val gen = generation
+        val tappedNotes = notePublication
+        scope.launch {
+            val html = withContext(Dispatchers.IO) { tappedNotes?.extract(target) }
+            if (gen != generation || bookNote.value != note) return@launch
+            if (html != null) {
+                noteHistory.add(note)
+                bookNote.value = note.copy(target = target, html = html, depth = noteHistory.size)
+                Log.i("ReaderEvidence", "BOOK_NOTE_NESTED target=$target committed=${committed.value?.toJSON()}")
+            } else {
+                // Ordinary publication links remain navigation, not silently reclassified as notes.
+                if (target.isEmpty()) return@launch
+                val url = android.net.Uri.parse(target).toUrl() ?: return@launch
+                publication.locatorFromLink(Link(href = url))?.let { dismissBookNote(); navigateCommitted(it) }
+            }
+        }
+    }
+
+    fun backWithinBookNote() {
+        if (noteHistory.isEmpty()) dismissBookNote() else {
+            bookNote.value = noteHistory.removeAt(noteHistory.lastIndex)
+            Log.i("ReaderEvidence", "BOOK_NOTE_BACK target=${bookNote.value?.target} committed=${committed.value?.toJSON()}")
+        }
+    }
     fun dismissBookNote() {
+        noteHistory.clear()
         Log.i("ReaderEvidence", "BOOK_NOTE_CLOSE target=${bookNote.value?.target} source=${committed.value?.toJSON()}")
         bookNote.value = null
     }
