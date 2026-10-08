@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Deterministic CC0 authored marked-footnote fixtures for ticket #5."""
+from pathlib import Path
+import hashlib, json, zipfile
+ROOT = Path(__file__).resolve().parent
+manifest=[]
+for kind, lang in [('short','es'),('long','en')]:
+    title=f'Marked {kind} footnote fixture'
+    content='<p id="note-short-text">NOTA CORTA: El árbol conserva su canción. <em>Este texto está en cursiva.</em></p>' if kind=='short' else ''.join(f'<p id="note-long-{i:02}">LONG NOTE {i:02}: The garden keeps the reader at the source passage while this explanation scrolls. Every paragraph has a stable identifier for repeatable inspection.</p>' for i in range(1,21))
+    doc=f'''<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="{lang}"><head><title>{title}</title><style>p{{margin-bottom:1em}}aside{{display:none}}</style></head><body><h1 id="source-heading">{title}</h1><p id="source-passage">SOURCE ANCHOR: The reader stays here. El lector sigue aquí.</p><p id="source-reference">Read the marked note <a id="note-ref" epub:type="noteref" href="#note-{kind}">[NOTE {kind.upper()}]</a>.</p><p id="ordinary-reference">Ordinary navigation <a href="destination.xhtml#ordinary-destination">[GO TO CHAPTER]</a>.</p><p id="source-after">AFTER REFERENCE: This page must remain visible after note dismissal.</p><aside id="note-{kind}" epub:type="footnote">{content}</aside></body></html>'''
+    entries={'mimetype':'application/epub+zip','META-INF/container.xml':'<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container"><rootfiles><rootfile full-path="EPUB/package.opf" media-type="application/oebps-package+xml"/></rootfiles></container>', 'EPUB/source.xhtml':doc,'EPUB/destination.xhtml':'<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Ordinary destination</title></head><body><h1 id="ordinary-destination">ORDINARY DESTINATION</h1><p>Normal chapter navigation commits this passage.</p><a href="source.xhtml#source-passage">Return to source</a></body></html>', 'EPUB/nav.xhtml':'<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops"><head><title>Contents</title></head><body><nav epub:type="toc"><ol><li><a href="source.xhtml">Source</a></li><li><a href="destination.xhtml">Destination</a></li></ol></nav></body></html>'}
+    entries['EPUB/package.opf']=f'<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="id"><metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="id">urn:reader-ldx:marked-{kind}:v1</dc:identifier><dc:title>{title}</dc:title><dc:language>{lang}</dc:language><meta property="dcterms:modified">2026-10-08T00:00:00Z</meta></metadata><manifest><item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/><item id="source" href="source.xhtml" media-type="application/xhtml+xml"/><item id="dest" href="destination.xhtml" media-type="application/xhtml+xml"/></manifest><spine><itemref idref="source"/><itemref idref="dest"/></spine></package>'
+    out=ROOT/f'marked-{kind}.epub'
+    with zipfile.ZipFile(out,'w') as z:
+        for name,data in entries.items():
+            info=zipfile.ZipInfo(name,(2026,10,8,0,0,0));info.compress_type=zipfile.ZIP_STORED if name=='mimetype' else zipfile.ZIP_DEFLATED;z.writestr(info,data.encode())
+    (ROOT.parents[1]/'android/app/src/main/assets/fixtures'/out.name).write_bytes(out.read_bytes())
+    manifest.append({'file':out.name,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'source':'Authored by Reader LDX prototype contributors; reproducible with generate_marked_notes.py','license':'CC0-1.0','language':lang,'source_anchor':'EPUB/source.xhtml#source-heading','reference':'EPUB/source.xhtml#note-ref','note_anchor':f'EPUB/source.xhtml#note-{kind}','ordinary_destination':'EPUB/destination.xhtml#ordinary-destination'})
+(ROOT/'marked-notes-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

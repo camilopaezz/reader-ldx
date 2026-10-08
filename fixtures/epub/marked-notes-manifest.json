@@ -1,0 +1,24 @@
+[
+  {
+    "file": "marked-short.epub",
+    "sha256": "fe8fbcef32e62f323842906d5b9daf02d1d4e16c019f39043865f8c0997c1862",
+    "source": "Authored by Reader LDX prototype contributors; reproducible with generate_marked_notes.py",
+    "license": "CC0-1.0",
+    "language": "es",
+    "source_anchor": "EPUB/source.xhtml#source-heading",
+    "reference": "EPUB/source.xhtml#note-ref",
+    "note_anchor": "EPUB/source.xhtml#note-short",
+    "ordinary_destination": "EPUB/destination.xhtml#ordinary-destination"
+  },
+  {
+    "file": "marked-long.epub",
+    "sha256": "e08a0ac485c20184b6faa5ca0e88e0728017b7d504a21dde907084e5db8e1121",
+    "source": "Authored by Reader LDX prototype contributors; reproducible with generate_marked_notes.py",
+    "license": "CC0-1.0",
+    "language": "en",
+    "source_anchor": "EPUB/source.xhtml#source-heading",
+    "reference": "EPUB/source.xhtml#note-ref",
+    "note_anchor": "EPUB/source.xhtml#note-long",
+    "ordinary_destination": "EPUB/destination.xhtml#ordinary-destination"
+  }
+]

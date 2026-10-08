@@ -1,0 +1,59 @@
+Timed out waiting for finished message from client socket connection from /127.0.0.1:37153 to /127.0.0.1:59898. Discarding connection.
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResValues
+> Task :app:checkDebugAarMetadata
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:parseDebugLocalResources
+> Task :app:extractDeepLinksDebug
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugResources
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:processDebugResources
+> Task :app:desugarDebugFileDependencies
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs
+> Task :app:checkDebugDuplicateClasses
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :app:mergeLibDexDebug
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:kspDebugKotlin
+> Task :app:mergeExtDexDebug
+> Task :app:l8DexDesugarLibDebug
+
+> Task :app:compileDebugKotlin
+w: file:///home/camilo/Work/code/reader-ldx-issue-5/android/app/src/main/java/dev/reader/ldx/MainActivity.kt:73:36 'val systemWindowInsetLeft: Int' is deprecated. Deprecated in Java.
+w: file:///home/camilo/Work/code/reader-ldx-issue-5/android/app/src/main/java/dev/reader/ldx/MainActivity.kt:73:66 'val systemWindowInsetTop: Int' is deprecated. Deprecated in Java.
+w: file:///home/camilo/Work/code/reader-ldx-issue-5/android/app/src/main/java/dev/reader/ldx/MainActivity.kt:73:95 'val systemWindowInsetRight: Int' is deprecated. Deprecated in Java.
+w: file:///home/camilo/Work/code/reader-ldx-issue-5/android/app/src/main/java/dev/reader/ldx/MainActivity.kt:73:126 'val systemWindowInsetBottom: Int' is deprecated. Deprecated in Java.
+
+> Task :app:compileDebugJavaWithJavac
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:processDebugJavaRes
+> Task :app:mergeProjectDexDebug
+> Task :app:mergeDebugJavaResource
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+
+BUILD SUCCESSFUL in 25s
+39 actionable tasks: 39 executed
