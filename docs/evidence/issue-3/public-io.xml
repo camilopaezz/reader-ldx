@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="dev.reader.ldx.DictionaryPublicBehaviorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-08T14:52:33.410Z" hostname="CamiloPX" time="9.056">
+<testsuite name="dev.reader.ldx.DictionaryPublicBehaviorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-08T20:00:40.712Z" hostname="CamiloPX" time="3.405">
   <properties/>
-  <testcase name="realImportsExactAliasesMissingAndRejectedPackages" classname="dev.reader.ldx.DictionaryPublicBehaviorTest" time="9.056"/>
+  <testcase name="realImportsExactAliasesMissingAndRejectedPackages" classname="dev.reader.ldx.DictionaryPublicBehaviorTest" time="3.405"/>
   <system-out><![CDATA[PUBLIC_LOOKUP Wikcionario Español-Español es->es selected=canción matched=canción kind=Exact match
 PUBLIC_LOOKUP Wiktionary Spanish-English es->en selected=canción matched=canción kind=Exact match
 PUBLIC_LOOKUP GNU Collaborative International Dictionary of English en->en selected=garden matched=garden kind=Exact match

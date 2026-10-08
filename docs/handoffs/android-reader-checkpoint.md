@@ -1,6 +1,6 @@
 # Android prototype checkpoint
 
-Paused at the owner request on 2026-10-08 to conserve the five-hour usage quota. All implementation agents stopped at clean committed checkpoints. Do not launch agents or resume verification until the owner asks to continue.
+Historical pause checkpoint from 2026-10-08. The owner has since requested continuation. Dictionary and annotation source is integrated at `0cc922d`, the build passed, and feature runtime verification has resumed. The saved branch details below describe the pause state; current issue comments and runtime reports record subsequent progress.
 
 ## Integrated runnable source
 
