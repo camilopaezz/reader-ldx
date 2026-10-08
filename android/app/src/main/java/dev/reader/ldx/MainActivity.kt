@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 when {
+                    engine.bookNote.value != null -> engine.dismissBookNote()
                     engine.transient.value -> lifecycleScope.launch { engine.cancelPreview(); controls = false }
                     nativeSelectionMode != null || selectionInfo != null -> { selectionInfo = null; nativeSelectionMode?.finish(); engine.clearSelection() }
                     controls -> controls = false
@@ -105,7 +106,7 @@ class MainActivity : AppCompatActivity() {
     }
     private suspend fun importFixture(lang: String) {
         val staged = File(cacheDir, "fixture.epub")
-        withContext(Dispatchers.IO) { assets.open("fixtures/foundation-$lang.epub").use { input -> staged.outputStream().use { input.copyTo(it) } } }
+        withContext(Dispatchers.IO) { assets.open("fixtures/${if (lang.startsWith("marked")) lang else "foundation-$lang"}.epub").use { input -> staged.outputStream().use { input.copyTo(it) } } }
         importFile(staged)
     }
     private suspend fun importFile(staged: File) {
@@ -133,6 +134,7 @@ class MainActivity : AppCompatActivity() {
         val visible by engine.visible.collectAsState()
         val committed by engine.committed.collectAsState()
         val preview by engine.transient.collectAsState()
+        val bookNote by engine.bookNote.collectAsState()
         Box(Modifier.fillMaxSize()) {
             if (library) Surface(Modifier.fillMaxSize()) {
                 Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -143,6 +145,10 @@ class MainActivity : AppCompatActivity() {
                         Button(onClick = { lifecycleScope.launch { guarded { importFixture("es") } } }) { Text("Import Spanish fixture") }
                     }
                     Button(onClick = { lifecycleScope.launch { guarded { importFixture("en") } } }) { Text("Import English fixture") }
+                    Row {
+                        TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-short") } } }) { Text("Short footnote fixture") }
+                        TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-long") } } }) { Text("Long footnote fixture") }
+                    }
                     books.forEach { book -> TextButton(onClick = { lifecycleScope.launch { guarded { open(book) } } }) { Text("${book.title} [${book.language}]") } }
                 }
             } else if (controls || preview) {
@@ -181,6 +187,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            bookNote?.let { BookNoteOverlay(it, engine::dismissBookNote) }
             if (message.isNotEmpty()) AlertDialog(onDismissRequest = { message = "" }, title = { Text("Reader error") }, text = { Text(message) }, confirmButton = { TextButton(onClick = { message = "" }) { Text("Close") } })
         }
     }

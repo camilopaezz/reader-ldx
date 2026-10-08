@@ -31,6 +31,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     val committed = MutableStateFlow<Locator?>(null)
     val selection = MutableStateFlow<Selection?>(null)
     val transient = MutableStateFlow(false)
+    val bookNote = MutableStateFlow<BookNote?>(null)
     private var observer: Job? = null
     private var reflowing = false
     private var preserveAnchor = false
@@ -58,13 +59,20 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         committed.value = locator
         selection.value = null
         transient.value = false
+        bookNote.value = null
         val factory = EpubNavigatorFactory(publication).createFragmentFactory(
             initialLocator = locator,
             initialPreferences = preferences(font, margins),
             listener = object : EpubNavigatorFragment.Listener {
                 override fun onExternalLinkActivated(url: org.readium.r2.shared.util.AbsoluteUrl) { Log.i("ReaderEvidence", "EXTERNAL_LINK unsupported=$url") }
                 override fun shouldFollowInternalLink(link: Link, context: org.readium.r2.navigator.HyperlinkNavigator.LinkContext?): Boolean {
+                    if (context is org.readium.r2.navigator.HyperlinkNavigator.FootnoteContext) {
+                        bookNote.value = BookNote(link.href.toString(), context.noteContent, committed.value)
+                        Log.i("ReaderEvidence", "BOOK_NOTE_OPEN target=${link.href} source=${committed.value?.toJSON()}")
+                        return false
+                    }
                     if (!transient.value && !reflowing) preserveAnchor = false
+                    Log.i("ReaderEvidence", "ORDINARY_LINK target=${link.href}")
                     return true
                 }
             },
@@ -104,7 +112,7 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
                 )
                 visible.value = located
                 Log.i("ReaderEvidence", "VISIBLE ${located.toJSON()}")
-                if (!transient.value && !reflowing && !preserveAnchor) saveCommit(located)
+                if (bookNote.value == null && !transient.value && !reflowing && !preserveAnchor) saveCommit(located)
             }
         }
     }
@@ -123,9 +131,9 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         it?.let { Log.i("ReaderEvidence", "SELECTION ${it.locator.toJSON()}") }
     }
     fun clearSelection() { navigator.clearSelection(); selection.value = null }
-    fun page(forward: Boolean) { if (reflowing) return; if (!transient.value) preserveAnchor = false; if (forward) navigator.goForward() else navigator.goBackward() }
+    fun page(forward: Boolean) { if (bookNote.value != null || reflowing) return; if (!transient.value) preserveAnchor = false; if (forward) navigator.goForward() else navigator.goBackward() }
     suspend fun typography(font: Double, margins: Double) {
-        if (transient.value) return
+        if (transient.value || bookNote.value != null) return
         val anchor = committed.value ?: navigator.firstVisibleElementLocator() ?: return
         val record = book ?: return
         reflowing = true
@@ -165,5 +173,9 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         transient.value = false
     }
     fun navigateCommitted(locator: Locator) { preserveAnchor = false; navigator.go(locator) }
+    fun dismissBookNote() {
+        Log.i("ReaderEvidence", "BOOK_NOTE_CLOSE target=${bookNote.value?.target} source=${committed.value?.toJSON()}")
+        bookNote.value = null
+    }
     fun diagnosticDestination(): Locator? = publication.readingOrder.lastOrNull()?.let { publication.locatorFromLink(it) }
 }

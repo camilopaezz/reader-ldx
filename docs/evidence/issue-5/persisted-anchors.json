@@ -1,0 +1,74 @@
+[
+  {
+    "title": "El jardín de las palabras",
+    "language": "es",
+    "committedLocator": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-06",
+        "progression": 0.2500578837693911,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.06: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    }
+  },
+  {
+    "title": "The garden of words",
+    "language": "en",
+    "committedLocator": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-02",
+        "progression": 0.10001852194850898,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Passage 2.02: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story."
+      }
+    }
+  },
+  {
+    "title": "Marked short footnote fixture",
+    "language": "es",
+    "committedLocator": {
+      "href": "EPUB/destination.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Destination",
+      "locations": {
+        "cssSelector": "#ordinary-destination",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "ORDINARY DESTINATION"
+      }
+    }
+  },
+  {
+    "title": "Marked long footnote fixture",
+    "language": "en",
+    "committedLocator": {
+      "href": "EPUB/source.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Source",
+      "locations": {
+        "cssSelector": "#source-heading",
+        "progression": 0,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Marked long footnote fixture"
+      }
+    }
+  }
+]
