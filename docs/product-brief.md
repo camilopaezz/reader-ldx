@@ -22,9 +22,9 @@ Lookup tries the selected spelling first, then a base form when language and dic
 
 Notes appear over the reading page rather than moving the reader to their location in the book. Long notes scroll in an expandable overlay. References to another note open within the overlay, with their own Back action. Opening a note leaves the underlying reading position unchanged; restarting the app restores that position with overlays closed.
 
-Only jumps made with the bottom progress slider create reading back/forward history. Chapter, search-result, and bookmark jumps do not create that history. Ordinary page turns do not create it either. The exact slider return controls and Android Back behavior are delegated to future observation of the Kindle Android app. Back within nested note overlays is a separate interaction.
+Only jumps made with the bottom progress slider create reading back/forward history. Chapter, search-result, and bookmark jumps do not create that history. Ordinary page turns do not create it either. [Kindle observation](kindle-interaction-research.md#k04-slider-jumps-and-return-controls) established live preview, page-tap commitment, and a visible return toggle that also records chapter/search/bookmark jumps. Our slider-only constraint remains. Commit timing, history capacity, explicit forward presentation, and Android Back dismissal still need a product decision; Kindle's toggle does not establish our accepted back/forward design. Back within nested note overlays is a separate interaction.
 
-All detailed Kindle interaction questions, including previously answered ones, live in [the Kindle interaction research queue](kindle-interaction-research.md). User-selected behavior is the baseline; no Kindle observations have been made yet.
+All detailed Kindle interaction questions, including previously answered ones, live in [the Kindle interaction research record](kindle-interaction-research.md). The Android emulator session on 2026-10-07 used Sobre Palestina and Soccernomics. User-selected behavior remains the baseline; observed differences and fixture limits are recorded separately.
 
 Tapping the left/right edges or swiping turns pages. Tapping the center shows reading controls, which are hidden during reading.
 
@@ -62,7 +62,9 @@ Settled root: personal use, Android phones first, unencrypted EPUBs, Kindle-like
 
 Current interview frontier: no unanswered product or stack questions. Q42 and Q43 are settled: preserve offline edits in trash without restoring the book, and download server-listed books on demand.
 
-Delegated research frontier: detailed reader controls, slider history, Android Back, note overlays, lookup, annotation interactions, typography, and interruption behavior. These questions are collected in [the Kindle research file](kindle-interaction-research.md), including answered baselines. Run that observation session in the near future before committing to detailed interaction specifications.
+Research frontier: the [Kindle session](kindle-interaction-research.md) established immediate word lookup, source cards, selection and annotation menus, short/long footnote sheets, generic-link previews, live slider preview, return persistence, and settings controls. Nested note/image fixtures, cross-page selection, chapter boundaries, precise reflow anchors, and some interruption states remain unverified. Use [the prototype handoff](handoffs/android-reader-prototype.md) for the next engine gate.
+
+Observation-informed UI proposals are an expandable lookup sheet with source cards and a separate passage menu, an Aa sheet grouped by font/layout with live reflow, and an annotation list grouped by chapter with passage context. These are supported by [K02](kindle-interaction-research.md#k02-selection-and-lookup), [K05](kindle-interaction-research.md#k05-highlights-bookmarks-and-annotation-notes), and [K06](kindle-interaction-research.md#k06-typography-and-visual-reading-settings). Exact typography defaults and warm-resume overlay policy remain proposals, not confirmed requirements. Browser return at the same passage with selection and lookup closed was observed in K02.
 
 Completed exploration: [engine and dictionary findings](engine-findings.md). Readium has relevant integration APIs, but generic endnote content and nested overlays need a prototype. Dictionary-format interoperability does not establish lookup quality.
 
@@ -81,7 +83,7 @@ Design branches and validation dependencies:
 
 ## Delivery sequence
 
-1. Observe Kindle Android interactions using the dedicated research queue. Resolve the open interaction details and retain the user's explicit departures from Kindle.
+1. Kindle Android observation is recorded with remaining fixture and measurement limits. Carry those limits and the user's explicit departures into the prototype.
 2. Validate Readium and real StarDict dictionaries in a focused Android prototype. This is an engine compatibility gate, not a claim that the full app is ready.
 3. Build the usable local Android reader with imports, offline lookup, annotations, and local resume.
 4. Add phone/server sync close behind, with login, on-demand downloads, conflict preservation, and recoverable deletion.
@@ -91,4 +93,4 @@ Design branches and validation dependencies:
 
 Keep agreed product behavior here. Define settled domain terms in [GLOSSARY.md](../GLOSSARY.md). Record architectural decisions in docs/adr/ when a meaningful trade-off makes them costly to reverse. Create those records only after the decision is settled.
 
-The current product and stack questions are settled and recorded. Readium still requires prototype validation. Detailed reader interactions are queued for Kindle observation rather than more speculative interview questions. Export is deferred; dependency versions, target Android SDK, and exact deployment reachability are implementation checks before the relevant work begins. No Kindle observation session or application implementation has started.
+The current product and stack questions are settled and recorded. Readium still requires prototype validation. Kindle Android observation has run; detailed proposals and unresolved interaction choices are linked above. Export is deferred; dependency versions, target Android SDK, and exact deployment reachability are implementation checks before the relevant work begins. Application implementation has not started.

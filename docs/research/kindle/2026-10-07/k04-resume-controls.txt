@@ -1,0 +1,23 @@
+Page: com.amazon.kindle
+App: com.amazon.kindle
+Snapshot: 18 visible nodes
+@e1 [group]
+@e2 [button] "Close Book."
+@e3 [button] "Table of Contents"
+@e4 [button] "In-book Search"
+@e5 [button] "Annotations"
+@e6 [button] "Reading Settings"
+@e7 [button] "More options"
+@e8 [text] "Sobre Palestina"
+@e9 [list]
+  [content above list hidden]
+  [content below list hidden]
+@e10 [group] "Page 10."
+@e11 [group]
+@e12 [button] "Add bookmark"
+@e13 [group] "Page 11. Current Location.  Last visited page."
+@e14 [group]
+@e15 [button] "Add bookmark"
+@e16 [group] "Page 11."
+@e17 [button] "Birds Eye View"
+@e18 [seekbar] "Reading Progress Bar"

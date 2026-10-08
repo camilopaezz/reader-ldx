@@ -1,5 +1,7 @@
 # Handoff: Kindle Android interaction research
 
+Session completed on 2026-10-07 to the evidence available in the requested Sobre Palestina and Soccernomics editions. Read [the findings and explicit remaining limits](../kindle-interaction-research.md) before repeating research. Continue engine validation from [the Android prototype handoff](android-reader-prototype.md). The session accounted for every K question; unsupported fixtures and unmeasured transitions remain labelled, rather than asserted as observations.
+
 ## Task
 
 Operate the Kindle Android app and document its reading interactions so reader-ldx can implement a familiar experience. This is an observation and specification task; app implementation comes afterward.

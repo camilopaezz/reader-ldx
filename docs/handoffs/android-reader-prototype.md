@@ -1,0 +1,21 @@
+# Handoff: Android reader prototype
+
+Read [the product brief](../product-brief.md), [engine findings](../engine-findings.md), and [the Kindle session findings](../kindle-interaction-research.md) before implementing the prototype. The actual Android reference was tested on 2026-10-07 with Sobre Palestina and Soccernomics. This research does not validate Readium.
+
+## Prototype sequence
+
+1. Load controlled Spanish and English reflowable EPUB fixtures into the proposed native Android/Readium shell. Include an accented word, a conjugation, a plural, a contraction, multiline and cross-page selection, and a word known to be absent from the selected real StarDict package. The check passes when selected text and locators are available and lookup distinguishes exact match, supported base form, and no entry. `afecten` → `afectar` is a useful positive example; `inswingers` → `insusceptible` is the mismatch to reject. See K02.
+2. Exercise edge taps, swipes, center controls, links, and selection handles. Require stable text anchors after reflow and local process restart. Measure chapter boundaries and cross-page selection explicitly. The check passes when gestures do not conflict with link activation or handle dragging, and font changes preserve the intended passage. See K01, K06, and K07.
+3. Render highlights and written notes as persisted locator-based annotations. Create, recolor, edit, delete, restart, and reopen via an annotation list. The check passes when saved records restore on the same ranges and a list jump leaves slider history untouched. Kindle shows lookup alongside passage actions; retain that useful arrangement. See K05.
+4. Intercept both marked footnotes and ordinary internal endnote links. Use fixtures with short/long notes, a nested hyperlink, italics, an image with a relative path, and a backlink. The check passes when notes open in the accepted expandable, scrolling overlay, nested Back returns within that overlay, the underlying locator stays unchanged, and restart closes it. Arendt note 1 used generic navigation/preview while notes 2 and 3 used footnote sheets. Validate classification and extraction separately. See K03 and the experimental Readium hyperlink API in the engine findings.
+5. Separate committed locator, slider preview, slider history, and note navigation state. Prototype live drag preview and one history event per committed slider operation. Exercise two jumps, intervening page turns, return/forward, Android Back, warm resume, and termination during pointer-down. The check passes when only slider operations add history, page turns do not erase it, chapter/search/bookmark jumps do not add entries, and a transient preview cannot overwrite the saved passage. See K04.
+
+## Decisions and remaining limits
+
+The user's accepted behavior stays in the product brief. Kindle's chapter/search/bookmark return points, single visible return toggle, generic-link navigation, nonexpanding footnote sheet, and online translation are differences, not replacement requirements.
+
+Observation supports immediate lookup, expandable source cards, passage action menus, an Aa settings sheet with live reflow, chapter-grouped annotation context, and a distinction between slider preview and committed position. Before making those proposals final, settle slider commit timing, history capacity and forward presentation, Android Back dismissal, typography defaults, and warm-resume overlay policy. Implement the smallest testable version without treating these choices as Kindle facts.
+
+Remaining Kindle evidence limits are documented alongside each K section. The main fixture gaps are a clickable nested note and note images; the main measurement gaps are natural chapter boundaries, cross-page selection, exact anchor preservation during typography changes, and interruption during active selection-handle or slider pointer movement. A single injected Back did not reliably dismiss the observed note UI, so gesture Back needs a dedicated test.
+
+Completion means these integration checks run on Android and their results are recorded with fixture identity, starting locator, actions, and restored locator. Documentation/API plausibility alone does not satisfy the engine gate. Server, sync, login, export, and cross-device reading positions are outside this prototype.
