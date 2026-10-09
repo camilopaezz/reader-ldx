@@ -1,3 +1,5 @@
+@file:OptIn(androidx.compose.material3.ExperimentalMaterial3ExpressiveApi::class)
+
 package dev.reader.ldx
 
 import androidx.compose.foundation.layout.*
@@ -15,7 +17,7 @@ import androidx.compose.ui.unit.dp
     onActions: (() -> Unit)?, onClose: () -> Unit
 ) {
     var input by remember(selected) { mutableStateOf(selected) }
-    Surface(Modifier.fillMaxWidth().fillMaxHeight(0.65f), tonalElevation = 12.dp) {
+    Surface(Modifier.fillMaxWidth().fillMaxHeight(0.65f), shape = MaterialTheme.shapes.extraLarge, color = MaterialTheme.colorScheme.surfaceContainer) {
         Column(Modifier.padding(16.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Text("Offline dictionary", style = MaterialTheme.typography.titleLarge)
             Row {
@@ -27,7 +29,7 @@ import androidx.compose.ui.unit.dp
             OutlinedTextField(value = input, onValueChange = { input = it }, label = { Text("Lookup text") }, modifier = Modifier.fillMaxWidth())
             Text("Installed sources. Book-language definitions appear first.", style = MaterialTheme.typography.bodySmall)
             dictionaries.forEach { dictionary ->
-                TextButton(enabled = !busy, onClick = { onLookup(dictionary, input) }) { Text("${dictionary.name} [${dictionary.source} → ${dictionary.target}]") }
+                FilledTonalButton(enabled = !busy, shapes = ButtonDefaults.shapes(), modifier = Modifier.fillMaxWidth(), onClick = { onLookup(dictionary, input) }) { Text("${dictionary.name} [${dictionary.source} → ${dictionary.target}]") }
             }
             current?.let { Text("Source: ${it.name} [${it.source} → ${it.target}]") }
             result?.let {
