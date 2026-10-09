@@ -16,10 +16,12 @@ interface BookDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE) suspend fun insert(book: BookRecord)
     @Query("UPDATE books SET committedLocator = :locator WHERE id = :id") suspend fun commit(id: String, locator: String)
 }
-@Database(entities = [BookRecord::class], version = 1, exportSchema = false)
-abstract class ReaderDatabase : RoomDatabase() { abstract fun books(): BookDao }
+@Database(entities = [BookRecord::class, SliderReturnRecord::class], version = 2, exportSchema = false)
+abstract class ReaderDatabase : RoomDatabase() { abstract fun books(): BookDao; abstract fun slider(): SliderReturnDao }
 class ReaderStorage(private val context: Context) {
-    val database = Room.databaseBuilder(context, ReaderDatabase::class.java, "reader.db").build()
+    val database = Room.databaseBuilder(context, ReaderDatabase::class.java, "reader.db").addMigrations(object : androidx.room.migration.Migration(1, 2) {
+        override fun migrate(db: androidx.sqlite.db.SupportSQLiteDatabase) { db.execSQL("CREATE TABLE IF NOT EXISTS slider_return (bookId TEXT NOT NULL PRIMARY KEY, locatorJson TEXT NOT NULL)") }
+    }).build()
     val books = database.books()
     private val last = stringPreferencesKey("last-book")
     private val font = doublePreferencesKey("font-size")
