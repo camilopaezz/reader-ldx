@@ -9,6 +9,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private val containerId = 1001
     private var books by mutableStateOf<List<BookRecord>>(emptyList())
     private var controls by mutableStateOf(false)
+    private var topPanel by mutableStateOf<ReaderPanel?>(null)
     private var library by mutableStateOf(true)
     private var opened by mutableStateOf<BookRecord?>(null)
     private var message by mutableStateOf("")
@@ -99,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         }
         val root = FrameLayout(this)
         root.addView(FrameLayout(this).apply { id = containerId }, FrameLayout.LayoutParams(-1, -1))
-        val overlay = ComposeView(this).apply { setContent { MaterialTheme { ReaderUi() } } }
+        val overlay = ComposeView(this).apply { setContent { ReaderExpressiveTheme { ReaderUi() } } }
         root.addView(overlay, FrameLayout.LayoutParams(-1, -1))
         root.setOnApplyWindowInsetsListener { view, insets ->
             view.setPadding(insets.systemWindowInsetLeft, insets.systemWindowInsetTop, insets.systemWindowInsetRight, insets.systemWindowInsetBottom)
@@ -109,6 +112,7 @@ class MainActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 when {
+                    topPanel != null -> topPanel = null
                     annotations.dismiss() -> Unit
                     engine.bookNote.value != null -> engine.backWithinBookNote()
                     dictionaryOpen -> dictionaryOpen = false
@@ -132,7 +136,7 @@ class MainActivity : AppCompatActivity() {
     private suspend fun open(book: BookRecord) {
         engine.open(book, containerId, size, margins)
         slider.opened()
-        opened = book; library = false; controls = false; selectionInfo = null; dictionaryOpen = false
+        opened = book; library = false; controls = false; topPanel = null; selectionInfo = null; dictionaryOpen = false
     }
     private suspend fun importBook(uri: Uri) {
         val staged = File(cacheDir, "import.epub")
@@ -188,7 +192,7 @@ class MainActivity : AppCompatActivity() {
         val bookNote by engine.bookNote.collectAsState()
         Box(Modifier.fillMaxSize()) {
             if (library) Surface(Modifier.fillMaxSize()) {
-                Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Column(Modifier.padding(20.dp).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     Text("Reader LDX prototype", style = MaterialTheme.typography.headlineSmall)
                     Text("Import an unencrypted reflowable EPUB. Copies and reading positions stay on this device.")
                     Button(onClick = { import.launch(arrayOf("application/epub+zip", "application/octet-stream")) }) { Text("Import EPUB") }
@@ -196,60 +200,53 @@ class MainActivity : AppCompatActivity() {
                         Button(onClick = { lifecycleScope.launch { guarded { importFixture("es") } } }) { Text("Import Spanish fixture") }
                     }
                     Button(onClick = { lifecycleScope.launch { guarded { importFixture("en") } } }) { Text("Import English fixture") }
-                    Row {
-                        TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-short") } } }) { Text("Short footnote fixture") }
-                        TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-long") } } }) { Text("Long footnote fixture") }
-                    }
+                    TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-short") } } }) { Text("Short footnote fixture") }
+                    TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("marked-long") } } }) { Text("Long footnote fixture") }
                     TextButton(onClick = { lifecycleScope.launch { guarded { importFixture("generic-notes") } } }) { Text("Generic nested note fixture") }
                     TextButton(onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionaries") }
                     books.forEach { book -> TextButton(onClick = { lifecycleScope.launch { guarded { open(book) } } }) { Text("${book.title} [${book.language}]") } }
                 }
             } else if (controls || preview) {
-                Surface(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), tonalElevation = 8.dp) {
-                    Column(Modifier.padding(12.dp)) {
-                        Text(opened?.title.orEmpty(), style = MaterialTheme.typography.titleSmall)
-                        Text(if (preview) "Preview, saved reading position unchanged" else "Committed reading")
-                        Text("Anchor: ${visible?.locations?.otherLocations?.get("cssSelector") ?: visible?.href}", style = MaterialTheme.typography.bodySmall)
-                        Text(visible?.text?.highlight?.take(85).orEmpty(), style = MaterialTheme.typography.bodySmall)
-                        Row {
-                            TextButton(enabled = !preview && !applyingTypography, onClick = { engine.page(false) }) { Text("Previous") }
-                            TextButton(enabled = !preview && !applyingTypography, onClick = { engine.page(true) }) { Text("Next") }
-                            TextButton(enabled = !preview, onClick = { library = true }) { Text("Fixtures") }
-                            TextButton(enabled = !preview, onClick = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true }) { Text("Dictionary") }
-                            TextButton(enabled = !preview, onClick = { controls = false }) { Text("Close") }
-                        }
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text("Aa ${size.toInt()}%")
-                            TextButton(enabled = !preview && !applyingTypography, onClick = { size = (size - 20).coerceAtLeast(60.0); applyTypography() }) { Text("Smaller") }
-                            TextButton(enabled = !preview && !applyingTypography, onClick = { size = (size + 20).coerceAtMost(220.0); applyTypography() }) { Text("Larger") }
-                            TextButton(enabled = !preview && !applyingTypography, onClick = { margins = if (margins == 1.0) 2.0 else 1.0; applyTypography() }) { Text("Margins") }
-                        }
-                        if (!preview) Row {
-                            TextButton(onClick = { annotations.showList = true }) { Text("Annotations") }
-                            TextButton(enabled = !annotations.busy, onClick = { lifecycleScope.launch { guarded { annotations.bookmark() } } }) { Text("Add bookmark") }
-                        }
-                        if (annotations.notice.isNotBlank()) Text(annotations.notice, style = MaterialTheme.typography.bodySmall)
-                        SliderUi(slider, committed, enabled = !applyingTypography,
-                            cancel = { lifecycleScope.launch { guarded { slider.cancel() } } },
-                            toggleReturn = { lifecycleScope.launch { guarded { slider.toggleReturn() } } })
-                        if (!preview) Text("Diagnostic jumps to last chapter", style = MaterialTheme.typography.bodySmall)
-                        if (!preview) Row {
-                            listOf("Chapter", "Search result", "Bookmark style").forEach { kind ->
-                                TextButton(onClick = { engine.diagnosticDestination()?.let { target ->
-                                    android.util.Log.i("ReaderEvidence", "DIAGNOSTIC_JUMP kind=$kind return=${slider.returnTarget?.toJSON()}")
-                                    engine.navigateCommitted(target)
-                                } }) { Text(kind) }
-                            }
-                        }
-                        Text("Saved: ${committed?.locations?.otherLocations?.get("cssSelector") ?: committed?.href}", style = MaterialTheme.typography.bodySmall)
+                ReaderChrome(
+                    title = opened?.title.orEmpty(), preview = preview,
+                    enabled = !applyingTypography, bookmarkEnabled = !annotations.busy,
+                    returnLabel = slider.returnTarget?.let { "Return to ${(100 * slider.fraction(it)).toInt()}%" },
+                    sliderBusy = slider.busy,
+                    notice = listOf(slider.notice, annotations.notice).filter { it.isNotBlank() }.joinToString("\n"),
+                    library = { library = true }, typography = { topPanel = ReaderPanel.Typography },
+                    bookmark = { lifecycleScope.launch { guarded { annotations.bookmark() } } },
+                    dictionaries = { dictionarySelection = null; dictionaryResult = null; dictionaryOpen = true },
+                    annotations = { annotations.showList = true }, diagnostics = { topPanel = ReaderPanel.Diagnostics },
+                    close = { controls = false },
+                    cancel = { lifecycleScope.launch { guarded { slider.cancel() } } },
+                    toggleReturn = { lifecycleScope.launch { guarded { slider.toggleReturn() } } })
+                Surface(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), color = MaterialTheme.colorScheme.surfaceContainer) {
+                    Column(Modifier.padding(horizontal = 20.dp, vertical = 8.dp)) {
+                        SliderUi(slider, committed, enabled = !applyingTypography)
                     }
                 }
             }
+            when (topPanel) {
+                ReaderPanel.Typography -> ReaderTypographyDialog(size, margins, !preview && !applyingTypography,
+                    smaller = { size = (size - 20).coerceAtLeast(60.0); applyTypography() },
+                    larger = { size = (size + 20).coerceAtMost(220.0); applyTypography() },
+                    changeMargins = { margins = if (margins == 1.0) 2.0 else 1.0; applyTypography() },
+                    dismiss = { topPanel = null })
+                ReaderPanel.Diagnostics -> ReaderDiagnosticsDialog(
+                    visible = "${visible?.locations?.otherLocations?.get("cssSelector") ?: visible?.href}\n${visible?.text?.highlight.orEmpty()}",
+                    committed = "${committed?.locations?.otherLocations?.get("cssSelector") ?: committed?.href}",
+                    enabled = !preview && !applyingTypography,
+                    jump = { kind -> engine.diagnosticDestination()?.let { target ->
+                        android.util.Log.i("ReaderEvidence", "DIAGNOSTIC_JUMP kind=$kind return=${slider.returnTarget?.toJSON()}")
+                        engine.navigateCommitted(target)
+                        topPanel = null
+                    } }, dismiss = { topPanel = null })
+                null -> Unit
+            }
             selectionInfo?.let { selected ->
                 Surface(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), tonalElevation = 8.dp) {
-                    Column(Modifier.padding(16.dp)) {
+                    Column(Modifier.heightIn(max = 480.dp).padding(16.dp).verticalScroll(rememberScrollState())) {
                         Text(selected.locator.text.highlight.orEmpty())
-                        Text("${selected.locator.href} ${selected.locator.locations}", style = MaterialTheme.typography.bodySmall)
                         selectionActions.forEach { (name, action) -> TextButton(onClick = { action(selected) }) { Text(name) } }
                         TextButton(onClick = { selectionInfo = null }) { Text("Back to handles") }
                         TextButton(onClick = { selectionInfo = null; engine.clearSelection() }) { Text("Dismiss selection") }
