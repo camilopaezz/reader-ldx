@@ -1,0 +1,72 @@
+[
+  {
+    "before": "before-ui",
+    "after": "after-install",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "before-ui",
+    "after": "typography-open",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "before-ui",
+    "after": "preview-uncommitted",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "before-ui",
+    "after": "cancel-restored",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "before-ui",
+    "after": "back-cancel-restored",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "spanish-before-reflow",
+    "after": "reflow-final",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "return-onward",
+    "after": "note-dismissed",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "final-drag-preview",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "final-drag-cancel",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "final-before-preview-stop",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "final-preview-restart",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "delivery-installed",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "delivery-preview",
+    "entireCapturedStateEqual": true
+  },
+  {
+    "before": "final-settings-restored",
+    "after": "delivery-restart",
+    "entireCapturedStateEqual": true
+  }
+]

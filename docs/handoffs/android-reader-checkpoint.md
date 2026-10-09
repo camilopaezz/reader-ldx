@@ -27,3 +27,12 @@ Dev_Pixel_8_API_36, emulator-5554, Android16/API36, WebView133.0.6943.137. Exist
 Call T3 device_list/device_open and use the exact returned agent-device executable, config and session flags. One agent at a time owns physical emulator access. Do not clear app data. Keep selection-menu and reading-position changes coordinated, resolve narrow integration conflicts, and verify the combined APK.
 
 [Build/run instructions](../../android/README.md) and fixture manifests reconstruct the inputs. The adoption gate remains failed because failed and unexercised checks remain. No provisional UI choice has owner approval yet.
+
+
+## Owner-requested UI pass after combined validation
+
+Issue #11 adds Material Design 3 Expressive, top options and slider-only bottom, implemented in isolated branch `prototype/11-reader-ui` at `a2e6067` and integrated on `prototype/android-reader` at `db6a60e`. AGENTS.md now requires Expressive in delegated Android UI work. Implementation, independent review and runtime evidence are in [issue-11](../evidence/issue-11/README.md). The older installed-APK/device-state paragraph above records the completed #8 baseline.
+
+Current delivery APK SHA256 `de8e42d349fd9e3cd8c9b0f0374bd13871cc394967039fc36b165ce43d2019f1`, Material3 1.5.0-alpha02, Compose UI/Foundation1.8.2/Runtime1.9.0, schema2. Integrated build and focused real-dictionary test passed. Native UI checks include preview/cancel/Return, reflow/restart, native lookup/source dropdown/manual lookup, 320dp controls and landscape. Existing five books, two Return rows, four dictionary packages and one annotation retained. Final book is Spanish foundation chapter2 heading `#chapter-2`, font120%, margins2, portrait/density420, offline, transient UI closed. No agent-device session remains active after root releases it.
+
+The owner requested this UI pass before further compatibility work. Appearance and provisional interaction review remain pending; #8 stays open and gate FAILED on #9/#10. No further compatibility implementation was started. Keyboard, TalkBack, dark mode, large system fonts and physical-phone ergonomics remain untested. Source algorithms and persistence were untouched. No PR created.

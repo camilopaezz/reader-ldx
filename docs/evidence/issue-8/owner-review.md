@@ -2,6 +2,8 @@
 
 Decision status is PENDING. Implementation and screenshots provide choices to review; they are not owner approval. #8 remains open until the owner responds. The engine gate is a separate result and cannot pass merely because these choices are accepted.
 
+The owner subsequently requested a UI pass in #11. Its [current screenshots and results](../issue-11/README.md) supersede the original reader chrome and lookup source buttons: options are at the top, the slider is alone at the bottom, and lookup uses a compact source picker under Material 3 Expressive. The table below describes the original combined baseline; commitment, Return and dismissal policies remain pending. The newer appearance is also ready for review.
+
 | Choice to review | Implemented behavior | Evidence |
 | --- | --- | --- |
 | Slider commitment and Return | Drag updates the reading page. Release leaves preview active. A page tap commits. One Return control swaps the current committed passage and one saved target. Ordinary navigation leaves the target unchanged; pressing Return after ordinary movement makes that current passage the onward counterpart. | [Combined slider run](runtime-report.md), [independent integrated sample](../issue-7/integrated/README.md) |
