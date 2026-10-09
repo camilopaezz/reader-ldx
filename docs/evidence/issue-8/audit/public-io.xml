@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.reader.ldx.DictionaryPublicBehaviorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-09T03:11:45.014Z" hostname="CamiloPX" time="4.563">
+  <properties/>
+  <testcase name="realImportsExactAliasesMissingAndRejectedPackages" classname="dev.reader.ldx.DictionaryPublicBehaviorTest" time="4.563"/>
+  <system-out><![CDATA[PUBLIC_LOOKUP Wikcionario Español-Español es->es selected=canción matched=canción kind=Exact match
+PUBLIC_LOOKUP Wiktionary Spanish-English es->en selected=canción matched=canción kind=Exact match
+PUBLIC_LOOKUP GNU Collaborative International Dictionary of English en->en selected=garden matched=garden kind=Exact match
+PUBLIC_LOOKUP Wikcionario Inglés-Español en->es selected=garden matched=garden kind=Exact match
+PUBLIC_LOOKUP Wikcionario Inglés-Español en->es selected=abandoned matched=abandoned kind=Exact match
+PUBLIC_LOOKUP Wikcionario Español-Español es->es selected=afecten matched=afectar, afectarse kind=Package synonym / base form
+PUBLIC_LOOKUP Wiktionary Spanish-English es->en selected=afecten matched=afectar kind=Package synonym / base form
+PUBLIC_LOOKUP Wikcionario Inglés-Español en->es selected=flowers matched=flower kind=Package synonym / base form
+PUBLIC_LOOKUP GNU Collaborative International Dictionary of English en->en selected=flowers matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wikcionario Español-Español es->es selected=readerldxabsentzz matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wikcionario Español-Español es->es selected=this phrase has no dictionary entry matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wiktionary Spanish-English es->en selected=readerldxabsentzz matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wiktionary Spanish-English es->en selected=this phrase has no dictionary entry matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wikcionario Inglés-Español en->es selected=readerldxabsentzz matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP Wikcionario Inglés-Español en->es selected=this phrase has no dictionary entry matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP GNU Collaborative International Dictionary of English en->en selected=readerldxabsentzz matched=null kind=No entry. No supported package base form.
+PUBLIC_LOOKUP GNU Collaborative International Dictionary of English en->en selected=this phrase has no dictionary entry matched=null kind=No entry. No supported package base form.
+PUBLIC_IMPORT missing-index Dictionary rejected: Missing or oversized en-es.idx
+PUBLIC_IMPORT truncated-index Dictionary rejected: Index size does not match metadata
+PUBLIC_IMPORT unsupported-version Dictionary rejected: Unsupported StarDict version
+PUBLIC_IMPORT missing-data Dictionary rejected: Missing or oversized en-es.dict
+PUBLIC_IMPORT entry-outside-data Dictionary rejected: Entry exceeds dictionary data
+PUBLIC_IMPORT alias-outside-index Dictionary rejected: Synonym points outside index
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

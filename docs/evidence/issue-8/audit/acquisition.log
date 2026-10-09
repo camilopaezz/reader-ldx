@@ -1,0 +1,26 @@
+es-es ea80cc791b76c8a40d6d770e0d71a67d3e9075a1be98033883e7ce4f50ac71b7
+es-en 2b5959caf133d38f629c42fd4da8d254628ea2c3a62307691c6a78dd19e3a00f
+en-es 55c0e95e9c19886d79800535a1b8c6779016fea7566cbb75fc29317a6a6d0717
+Traceback (most recent call last):
+  File "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/acquire.py", line 12, in <module>
+    if not archive.exists(): urllib.request.urlretrieve(url, archive)
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 212, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+                            ~~~~~~~^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 493, in open
+    response = meth(req, response)
+  File "/usr/lib/python3.14/urllib/request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/lib/python3.14/urllib/request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.14/urllib/request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 403: Forbidden

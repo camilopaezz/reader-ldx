@@ -1,0 +1,9 @@
+{
+  "source_sha": "2e26d4c018cd8f30da7d1dc15e0b7d0d0f956f7d",
+  "recorded_utc": "2026-10-09T03:13:35.614431+00:00",
+  "apk_sha256": "a5170ab241d604006d4003dbe1a3aab6f8438414d00fe87784cf5cd22880a9e7",
+  "app_version": "0.1.0",
+  "books_schema": 2,
+  "device_commands_performed": false,
+  "fixtures_path": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded"
+}

@@ -1,0 +1,15 @@
+
+------------------------------------------------------------
+Gradle 8.14.1
+------------------------------------------------------------
+
+Build time:    2025-05-22 13:44:09 UTC
+Revision:      c174b82566a79e3575bac8c7648c7b36cd815e94
+
+Kotlin:        2.0.21
+Groovy:        3.0.24
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  21.0.12.1 (Eclipse Adoptium 21.0.12.1+1-LTS)
+Daemon JVM:    /home/camilo/.local/share/java/jdk-21.0.12.1+1 (no JDK specified, using current Java home)
+OS:            Linux 7.2.9-1-cachyos amd64
+

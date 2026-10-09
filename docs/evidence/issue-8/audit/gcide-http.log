@@ -1,0 +1,19 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0  0 14.26M   0      0   0      0      0      0                              0  0 14.26M   0      0   0      0      0      0                              0  0 14.26M   0      0   0      0      0      0                              0
+HTTP/2 200 
+date: Fri, 09 Oct 2026 03:10:16 GMT
+content-type: text/plain
+content-length: 14958781
+server: cloudflare
+last-modified: Wed, 09 Jan 2019 15:35:31 GMT
+etag: "5c3614c3-e440bd"
+cache-control: public, max-age=86400, immutable
+accept-ranges: bytes
+age: 45244
+cf-cache-status: HIT
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=CcsERZbgq8zVF30UhTCopKx2r9%2FCJx8V6ngfyQsbZlu%2BET9Kj7Vx3lTdOp%2BkLm0fEJdltpi53N0l%2BpjODszLDILLeeJCAhYm%2F2WsqzQtDgM13ZD4WF1SXRrmrG9dR6nZXrVf3dSrFA%3D%3D"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-ray: a47a30fb1fe88058-MIA
+alt-svc: h3=":443"; ma=86400
+
