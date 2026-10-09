@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity() {
                             TextButton(enabled = !annotations.busy, onClick = { lifecycleScope.launch { guarded { annotations.bookmark() } } }) { Text("Add bookmark") }
                         }
                         if (annotations.notice.isNotBlank()) Text(annotations.notice, style = MaterialTheme.typography.bodySmall)
-                        SliderUi(slider, committed,
+                        SliderUi(slider, committed, enabled = !applyingTypography,
                             cancel = { lifecycleScope.launch { guarded { slider.cancel() } } },
                             toggleReturn = { lifecycleScope.launch { guarded { slider.toggleReturn() } } })
                         if (!preview) Text("Diagnostic jumps to last chapter", style = MaterialTheme.typography.bodySmall)

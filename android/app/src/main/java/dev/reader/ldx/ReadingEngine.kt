@@ -147,15 +147,16 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
                 navigator.evaluateJavascript("(function(){if(window.__readerNoteCapture)return;window.__readerNoteCapture=true;document.addEventListener('click',function(e){var a=e.target.closest('a');if(a)window.__readerNoteSource=(a.id?'#'+a.id:'');},true);})()")
                 Log.i("ReaderEvidence", "VISIBLE ${located.toJSON()}")
                 logAnnotationRanges()
-                if (bookNote.value == null && !transient.value && !reflowing && !preserveAnchor) saveCommit(located)
+                if (bookNote.value == null && !transient.value && !reflowing && !preserveAnchor) saveCommit(located, ordinary = true)
             }
         }
     }
     private fun preferences(font: Double, margins: Double) = EpubPreferences(fontSize = font / 100.0, pageMargins = margins, fontFamily = org.readium.r2.navigator.preferences.FontFamily.SERIF, scroll = false, publisherStyles = false)
-    private suspend fun saveCommit(locator: Locator) {
+    private suspend fun saveCommit(locator: Locator, ordinary: Boolean = false) {
         val id = book?.id ?: return
         persistence.lock()
         try {
+            if (ordinary && (transient.value || bookNote.value != null || reflowing || preserveAnchor)) return
             storage.books.commit(id, locator.toJSON().toString())
             committed.value = locator
             Log.i("ReaderEvidence", "COMMITTED ${locator.toJSON()}")
@@ -192,20 +193,28 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
     }
     /** Set suppression before initiating movement, never after an engine callback. */
     fun preview(locator: Locator): Boolean { transient.value = true; clearSelection(); return navigator.go(locator, animated = false) }
+    suspend fun beginPreview(): Locator? {
+        transient.value = true
+        persistence.lock()
+        try { return committed.value } finally { persistence.unlock() }
+    }
     suspend fun cancelPreview() {
         val anchor = committed.value ?: return
         preserveAnchor = true
-        navigator.go(anchor)
-        awaitAnchorVisible(anchor)
+        withTimeout(5000) { while (!navigator.go(anchor, animated = false)) delay(100) }
+        awaitPreviewDestination(anchor)
         transient.value = false
     }
     suspend fun awaitPreviewDestination(anchor: Locator) {
         val selector = anchor.locations.otherLocations["cssSelector"]?.toString()
         if (selector != null) {
             withTimeout(5000) { while (navigator.currentLocator.value.href != anchor.href) delay(50) }
+            navigator.evaluateJavascript("readium.scrollToLocator(${anchor.toJSON()})")
             awaitAnchorVisible(anchor)
         } else {
+            withTimeout(5000) { while (navigator.currentLocator.value.href != anchor.href) delay(50) }
             val progression = anchor.locations.progression ?: 0.0
+            navigator.evaluateJavascript("readium.scrollToPosition($progression)")
             // Readium 3.1.2 scrollToPosition uses scrollingElement.scrollWidth * progression
             // in this prototype's paginated, horizontal EPUB layout. Check that actual page.
             val script = "(function(){var e=document.scrollingElement;if(!e||document.readyState!=='complete')return false;var w=e.scrollWidth,x=Math.abs(e.scrollLeft),p=w*" + progression + ";return w>0&&p>=x-2&&p<Math.min(w,x+innerWidth)+2})()"
@@ -214,8 +223,9 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
                 var attempts = 0
                 while (matches < 3) {
                     val matchesPage = navigator.currentLocator.value.href == anchor.href && navigator.evaluateJavascript(script) == "true"
+                    if (attempts == 0 || attempts == 20) Log.i("ReaderEvidence", "PREVIEW_WAIT requested=${anchor.toJSON()} current=${navigator.currentLocator.value.toJSON()} viewport=" + navigator.evaluateJavascript("(function(){var e=document.scrollingElement;return {offset:Math.abs(e.scrollLeft),width:e.scrollWidth,viewport:innerWidth}})()"))
                     matches = if (matchesPage) matches + 1 else 0
-                    if (!matchesPage && attempts++ % 5 == 0) preview(anchor)
+                    if (!matchesPage && attempts++ % 5 == 0) navigator.evaluateJavascript("readium.scrollToPosition($progression)")
                     delay(100)
                 }
             }
@@ -234,7 +244,12 @@ class ReadingEngine(private val activity: FragmentActivity, private val storage:
         }
     }
     suspend fun commitPreview(anchor: Locator? = null, persist: (suspend (Locator) -> Unit)? = null): Locator? {
-        val destination = anchor ?: navigator.firstVisibleElementLocator() ?: visible.value ?: return null
+        val displayedAnchor = navigator.firstVisibleElementLocator()
+        val current = navigator.currentLocator.value
+        val destination = anchor ?: current.copy(
+            locations = current.locations.copy(otherLocations = current.locations.otherLocations + (displayedAnchor?.locations?.otherLocations ?: emptyMap())),
+            text = displayedAnchor?.text ?: current.text
+        )
         persistence.lock()
         try {
             if (persist == null) {
