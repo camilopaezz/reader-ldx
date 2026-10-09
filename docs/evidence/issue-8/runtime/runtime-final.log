@@ -535,3 +535,13 @@
 10-09 05:58:45.221  4575  4575 I ReaderEvidence: VISIBLE {"href":"EPUB\/chapter2.xhtml","type":"application\/xhtml+xml","title":"Chapter 2","locations":{"cssSelector":"#chapter-2","progression":0,"position":2,"totalProgression":0.5},"text":{"highlight":"The garden of words 2"}}
 10-09 05:58:45.221  4575  4575 I ReaderEvidence: ANNOTATION_RENDERED []
 10-09 05:58:45.224  4575  4575 I ReaderEvidence: COMMITTED {"href":"EPUB\/chapter2.xhtml","type":"application\/xhtml+xml","title":"Chapter 2","locations":{"cssSelector":"#chapter-2","progression":0,"position":2,"totalProgression":0.5},"text":{"highlight":"The garden of words 2"}}
+10-09 05:59:51.330  4575  4575 I ReaderEvidence: ANNOTATION_RENDERED []
+10-09 05:59:51.540  4575  4575 I ReaderEvidence: SLIDER_STATE return=null positions=300
+10-09 05:59:51.789  4575  4575 I ReaderEvidence: VISIBLE {"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}}
+10-09 05:59:51.790  4575  4575 I ReaderEvidence: ANNOTATION_RENDERED []
+10-09 06:00:03.965  4575  4575 I ReaderEvidence: SELECTION {"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"progression":0,"position":1,"totalProgression":0},"text":{"before":"SOURCESOURCE STAYS HERE. The tree remembers its ","highlight":"roots","after":".[GENERIC ENDNOTE][ROLE ENDNOTE][ENDNOTES LIST][MARKED NOTE][ORDINARY CHAPTER][UNTYPED COMMENTARY"}}
+10-09 06:00:04.301  4575  4575 I ReaderEvidence: LOOKUP selected=roots source=en target=en headword=null kind=No entry. No supported package base form. elapsedMs=334
+10-09 06:00:28.913  6288  6288 I ReaderEvidence: ANNOTATION_RENDERED []
+10-09 06:00:29.105  6288  6288 I ReaderEvidence: SLIDER_STATE return=null positions=300
+10-09 06:00:29.328  6288  6288 I ReaderEvidence: VISIBLE {"href":"EPUB\/source.xhtml","type":"application\/xhtml+xml","title":"Source","locations":{"cssSelector":"#source-heading","progression":0,"position":1,"totalProgression":0},"text":{"highlight":"GENERIC SOURCE"}}
+10-09 06:00:29.330  6288  6288 I ReaderEvidence: ANNOTATION_RENDERED []

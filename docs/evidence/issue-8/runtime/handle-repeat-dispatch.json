@@ -1,0 +1,56 @@
+[
+  {
+    "event": "DOWN",
+    "args": [
+      "input",
+      "motionevent",
+      "DOWN",
+      "562",
+      "955"
+    ],
+    "startedEpochSeconds": 1791543620.6452723,
+    "finishedEpochSeconds": 1791543620.684761,
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "event": "MOVE",
+    "args": [
+      "input",
+      "motionevent",
+      "MOVE",
+      "653",
+      "1025"
+    ],
+    "startedEpochSeconds": 1791543620.684956,
+    "finishedEpochSeconds": 1791543621.2564242,
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "event": "force-stop-before-UP",
+    "args": [
+      "am",
+      "force-stop",
+      "dev.reader.ldx"
+    ],
+    "startedEpochSeconds": 1791543623.8055568,
+    "finishedEpochSeconds": 1791543623.9386842,
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "event": "UP-after-force-stop",
+    "args": [
+      "input",
+      "motionevent",
+      "UP",
+      "653",
+      "1025"
+    ],
+    "startedEpochSeconds": 1791543623.9389782,
+    "finishedEpochSeconds": 1791543624.041975,
+    "rc": 0,
+    "output": ""
+  }
+]

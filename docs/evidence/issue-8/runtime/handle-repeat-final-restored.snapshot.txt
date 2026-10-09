@@ -1,0 +1,4 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 2 nodes
+@e2 [webview] "dev.reader.ldx:id/webView"
