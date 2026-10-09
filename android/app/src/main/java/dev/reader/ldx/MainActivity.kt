@@ -101,7 +101,15 @@ class MainActivity : AppCompatActivity() {
             override fun onDestroyActionMode(mode: ActionMode) { nativeSelectionMode = null; selectionInfo = null; engine.selection.value = null }
         }
         val root = FrameLayout(this)
-        root.addView(FrameLayout(this).apply { id = containerId }, FrameLayout.LayoutParams(-1, -1))
+        // Reserve space in the native viewport, not in EPUB paragraphs: a paragraph
+        // can continue in the next CSS column without carrying its top margin.
+        // FrameLayout measures the navigator against this smaller height, so page
+        // turns, selection and reflow share the same bounds on every page.
+        val readingGutter = (24 * resources.displayMetrics.density).toInt()
+        root.addView(FrameLayout(this).apply { id = containerId }, FrameLayout.LayoutParams(-1, -1).apply {
+            topMargin = readingGutter
+            bottomMargin = readingGutter
+        })
         val overlay = ComposeView(this).apply { setContent { ReaderExpressiveTheme { ReaderUi() } } }
         root.addView(overlay, FrameLayout.LayoutParams(-1, -1))
         root.setOnApplyWindowInsetsListener { view, insets ->
