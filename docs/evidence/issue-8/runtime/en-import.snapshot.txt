@@ -1,0 +1,16 @@
+Snapshot: 14 visible nodes (19 total)
+Collapsed 5 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+  [content below scroll-area hidden]
+@e2 [scroll-area] "Files in Downloads, Downloads" [scrollable]
+@e3 [list]
+@e6 [horizontalscrollview] [scrollable]
+@e7 [button] "Large files"
+@e8 [button] "This week"
+@e10 [button] "List view"
+@e11 [button] "Show roots"
+@e12 [button] "Search"
+@e13 [image] "More options"
+@e14 [gridview] "combined-en.epub, 2.41 kB, 10:08 PM"
+@e15 [cardview] "com.google.android.documentsui:id/item_root"
+@e16 [group] "Preview the file combined-en.epub"

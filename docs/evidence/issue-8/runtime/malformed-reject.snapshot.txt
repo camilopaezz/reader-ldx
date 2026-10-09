@@ -1,0 +1,29 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 25 visible nodes (42 total)
+Collapsed 17 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+  [content below scroll-area hidden]
+@e2 [scroll-area] "Files in Downloads, reader8-dictionaries, Downloads" [scrollable]
+@e3 [list]
+@e8 [horizontalscrollview] [scrollable]
+@e9 [button] "Large files"
+@e10 [button] "This week"
+@e12 [button] "List view"
+@e13 [button] "Show roots"
+@e14 [button] "Search"
+@e15 [image] "More options"
+@e16 [gridview] "gcide.zip, 14.97 MB, 10:10 PM, es-es.zip, 21.74 MB, es-en.zip, 19.29 MB, en-es.zip, 2.07 MB, res, gcide"
+@e17 [cardview] "com.google.android.documentsui:id/item_root"
+@e19 [cardview] "com.google.android.documentsui:id/item_root"
+@e21 [cardview] "com.google.android.documentsui:id/item_root"
+@e22 [group] "Preview the file en-es.zip"
+@e26 [cardview] "com.google.android.documentsui:id/item_root"
+@e27 [group] "Preview the file es-en.zip"
+@e31 [cardview] "com.google.android.documentsui:id/item_root"
+@e32 [group] "Preview the file es-es.zip"
+@e36 [cardview] "com.google.android.documentsui:id/item_root"
+@e37 [group] "Preview the file gcide.zip"
+@e41 [cardview] "com.google.android.documentsui:id/item_root"
+@e42 [group] "Preview the file missing-index.zip"
+Warning: android snapshots are slow in this run: p95 1887ms over 133 captures. Possible causes: device load, app or dev server stuck, helper fallback, or stale daemon.

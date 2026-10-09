@@ -1,0 +1,17 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 13 visible nodes (31 total)
+Collapsed 18 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Import EPUB"
+@e3 [group] "Import Spanish fixture"
+@e5 [group] "Import English fixture"
+@e7 [group] "Short footnote fixture"
+@e9 [group] "Long footnote fixture"
+@e11 [group] "Generic nested note fixture"
+@e13 [group] "Dictionaries"
+@e15 [group] "El jardín de las palabras [es]"
+@e17 [group] "Marked long footnote fixture [en]"
+@e19 [group] "Marked short footnote fixture [es]"
+@e21 [group] "The garden of words [en]"
+@e23 [group] "El jardín de las palabras 1, Árbol, canción y corazón. Espero que estas palabras no afecten la lectura., link, Pasaje 1.01: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.02: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.03: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+@e24 [webview] "El jardín de las palabras 1" [focused]

@@ -1,0 +1,16 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 11 visible nodes (24 total)
+Collapsed 13 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+  [content below scroll-area hidden]
+@e2 [group] "Close lookup"
+@e4 [group] "Passage actions"
+@e6 [text-field] "canción" [editable]
+@e7 [text] "Lookup text"
+@e8 [group] "Wikcionario Español-Español [es → es]"
+@e10 [group] "Wiktionary Spanish-English [es → en]"
+@e12 [group] "GNU Collaborative International Dictionary of English [en → en]"
+@e14 [group] "Wikcionario Inglés-Español [en → es]"
+@e16 [group] "El jardín de las palabras 1, Árbol, canción y corazón. Espero que estas palabras no afecten la lectura., link, Pasaje 1.01: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.02: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.03: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+@e17 [webview] "El jardín de las palabras 1" [focused]

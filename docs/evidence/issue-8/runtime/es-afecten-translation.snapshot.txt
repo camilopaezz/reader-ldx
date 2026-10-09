@@ -1,0 +1,11 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 6 visible nodes (16 total)
+Collapsed 10 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+  [content above scroll-area hidden]
+@e2 [group] "Source: es"
+@e4 [group] "Target: es"
+@e6 [group] "Choose ZIP"
+@e8 [group] "El jardín de las palabras 1, Árbol, canción y corazón. Espero que estas palabras no afecten la lectura., link, Pasaje 1.01: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.02: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.03: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+@e9 [webview] "El jardín de las palabras 1" [focused]

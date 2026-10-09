@@ -1,0 +1,4 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 2 nodes
+@e2 [webview] "El jardín de las palabras 1" [focused]
