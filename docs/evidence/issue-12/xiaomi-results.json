@@ -1,0 +1,68 @@
+{
+  "apkHash": "33e3754eddb6590d0f0038dd6cc0a5510b4e1cfbfc084cf717033447dc7b6183",
+  "device": "Xiaomi 21081111RG",
+  "android": "14",
+  "density": 440,
+  "bookSHA256": "0b4146234cd4523317da1efad5f0ad3c77ce9909c90ccc122e7ebc9418d616d0",
+  "bookReturnStateUnchangedOnInstall": true,
+  "measurements": [
+    {
+      "capture": "before-fix",
+      "contentTopPx": 84,
+      "firstInkPx": 95,
+      "gapPx": 11,
+      "minimumPx": 66,
+      "pass": false
+    },
+    {
+      "capture": "after-install",
+      "contentTopPx": 84,
+      "firstInkPx": 247,
+      "gapPx": 163,
+      "minimumPx": 66,
+      "pass": true
+    },
+    {
+      "capture": "after-continuation",
+      "contentTopPx": 84,
+      "firstInkPx": 161,
+      "gapPx": 77,
+      "minimumPx": 66,
+      "pass": true
+    },
+    {
+      "capture": "after-next-page",
+      "contentTopPx": 84,
+      "firstInkPx": 291,
+      "gapPx": 207,
+      "minimumPx": 66,
+      "pass": true
+    },
+    {
+      "capture": "after-restart",
+      "contentTopPx": 84,
+      "firstInkPx": 247,
+      "gapPx": 163,
+      "minimumPx": 66,
+      "pass": true
+    },
+    {
+      "capture": "final-continuation",
+      "contentTopPx": 84,
+      "firstInkPx": 161,
+      "gapPx": 77,
+      "minimumPx": 66,
+      "pass": true
+    }
+  ],
+  "finalAnchor": {
+    "href": "OEBPS/Text/sinopsis.xhtml",
+    "locations": {
+      "cssSelector": ":root > :nth-child(2) > :nth-child(1) > :nth-child(4)",
+      "progression": 0.5,
+      "position": 2,
+      "totalProgression": 0.011764705882352941
+    }
+  },
+  "bookRows": 1
+}

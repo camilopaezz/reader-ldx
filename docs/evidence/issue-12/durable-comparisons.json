@@ -1,0 +1,17 @@
+[
+  {
+    "before": "emulator-before",
+    "after": "emulator-after-install",
+    "capturedStateEqual": true
+  },
+  {
+    "before": "emulator-before-preview",
+    "after": "emulator-after-cancel",
+    "capturedStateEqual": true
+  },
+  {
+    "before": "emulator-reflow",
+    "after": "emulator-restart",
+    "capturedStateEqual": true
+  }
+]
