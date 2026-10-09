@@ -1,0 +1,20 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 14 visible nodes (29 total)
+Collapsed 15 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+  [content above scroll-area hidden]
+  [content below scroll-area hidden]
+@e2 [text-field] "can't" [editable]
+@e3 [text] "Lookup text"
+@e4 [group] "GNU Collaborative International Dictionary of English [en → en]"
+@e6 [group] "Wikcionario Inglés-Español [en → es]"
+@e8 [group] "Wikcionario Español-Español [es → es]"
+@e10 [group] "Wiktionary Spanish-English [es → en]"
+@e12 [group] "Source: es"
+@e14 [group] "Target: en"
+@e16 [group] "Choose ZIP"
+@e18 [group] "The garden of words 2, I can't forget the children's stories. These gardens hold words and memories., Passage 2.01: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Passage 2.02: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Passage 2.03: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Go to the second chapter, ., [2]"
+@e19 [webview] "The garden of words 2" [focused]
+@e22 [group] "link"
+@e24 [group] "[2]"

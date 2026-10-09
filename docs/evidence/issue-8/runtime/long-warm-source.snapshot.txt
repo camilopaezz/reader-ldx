@@ -1,0 +1,10 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 6 visible nodes (15 total)
+Collapsed 9 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Marked long footnote fixture, SOURCE ANCHOR: The reader stays here. El lector sigue aquí., AFTER REFERENCE: This page must remain visible after note dismissal., Ordinary navigation, ., [GO TO CHAPTER], Read the marked note, [NOTE LONG]"
+@e2 [webview] "Marked long footnote fixture" [focused]
+@e5 [group] "source-reference"
+@e7 [group] "[NOTE LONG]"
+@e10 [group] "ordinary-reference"
+@e12 [group] "[GO TO CHAPTER]"

@@ -1,0 +1,16 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 13 visible nodes (25 total)
+Collapsed 12 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Import EPUB"
+@e3 [group] "Import Spanish fixture"
+@e5 [group] "Import English fixture"
+@e7 [group] "Short footnote fixture"
+@e9 [group] "Long footnote fixture"
+@e11 [group] "Generic nested note fixture"
+@e13 [group] "Dictionaries"
+@e15 [group] "El jardín de las palabras [es]"
+@e17 [group] "Generic nested note fixture [en]"
+@e19 [group] "Marked long footnote fixture [en]"
+@e21 [group] "Marked short footnote fixture [es]"
+@e23 [group] "The garden of words [en]"

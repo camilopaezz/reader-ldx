@@ -1,0 +1,9 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 5 visible nodes (9 total)
+Collapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+@e2 [group] "Open passage"
+@e4 [group] "Edit"
+@e6 [group] "Remove"
+@e8 [group] "Close list"

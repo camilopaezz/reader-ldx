@@ -1,0 +1,7 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 3 visible nodes (6 total)
+Collapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "ORDINARY DESTINATION, Normal chapter navigation commits this passage., Return to source"
+@e2 [webview] "Ordinary destination" [focused]
+@e5 [group] "Return to source"

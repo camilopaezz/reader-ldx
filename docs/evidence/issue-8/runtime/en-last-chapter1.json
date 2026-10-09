@@ -1,0 +1,45 @@
+{
+  "reader.db": {
+    "schema": 2,
+    "books": [
+      {
+        "id": "36810f2582410c8d08f9059fd876539570ea62b12a15713e7bae69968e9af18f",
+        "path": "/data/user/0/dev.reader.ldx/files/books/36810f2582410c8d08f9059fd876539570ea62b12a15713e7bae69968e9af18f.epub",
+        "title": "El jard\u00edn de las palabras",
+        "language": "es",
+        "committedLocator": "{\"href\":\"EPUB\\/chapter1.xhtml\",\"type\":\"application\\/xhtml+xml\",\"title\":\"El jard\u00edn de las palabras\",\"locations\":{\"cssSelector\":\"#chapter-1\",\"progression\":0,\"position\":1,\"totalProgression\":0},\"text\":{\"highlight\":\"El jard\u00edn de las palabras 1\"}}"
+      },
+      {
+        "id": "06910accd7896736ece527c4ed56c682dbb8ef7e8661cae3f01ed802933e89fc",
+        "path": "/data/user/0/dev.reader.ldx/files/books/06910accd7896736ece527c4ed56c682dbb8ef7e8661cae3f01ed802933e89fc.epub",
+        "title": "The garden of words",
+        "language": "en",
+        "committedLocator": "{\"href\":\"EPUB\\/chapter1.xhtml\",\"type\":\"application\\/xhtml+xml\",\"title\":\"The garden of words\",\"locations\":{\"cssSelector\":\"#p-1-24\",\"progression\":0.8335906143871565,\"position\":1,\"totalProgression\":0},\"text\":{\"highlight\":\"Passage 1.24: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story.\"}}"
+      },
+      {
+        "id": "fe8fbcef32e62f323842906d5b9daf02d1d4e16c019f39043865f8c0997c1862",
+        "path": "/data/user/0/dev.reader.ldx/files/books/fe8fbcef32e62f323842906d5b9daf02d1d4e16c019f39043865f8c0997c1862.epub",
+        "title": "Marked short footnote fixture",
+        "language": "es",
+        "committedLocator": "{\"href\":\"EPUB\\/destination.xhtml\",\"type\":\"application\\/xhtml+xml\",\"title\":\"Destination\",\"locations\":{\"cssSelector\":\"#ordinary-destination\",\"progression\":0,\"position\":2,\"totalProgression\":0.5},\"text\":{\"highlight\":\"ORDINARY DESTINATION\"}}"
+      },
+      {
+        "id": "e08a0ac485c20184b6faa5ca0e88e0728017b7d504a21dde907084e5db8e1121",
+        "path": "/data/user/0/dev.reader.ldx/files/books/e08a0ac485c20184b6faa5ca0e88e0728017b7d504a21dde907084e5db8e1121.epub",
+        "title": "Marked long footnote fixture",
+        "language": "en",
+        "committedLocator": "{\"href\":\"EPUB\\/source.xhtml\",\"type\":\"application\\/xhtml+xml\",\"title\":\"Source\",\"locations\":{\"cssSelector\":\"#source-heading\",\"progression\":0,\"position\":1,\"totalProgression\":0},\"text\":{\"highlight\":\"Marked long footnote fixture\"}}"
+      }
+    ],
+    "slider_return": [
+      {
+        "bookId": "36810f2582410c8d08f9059fd876539570ea62b12a15713e7bae69968e9af18f",
+        "locatorJson": "{\"href\":\"EPUB\\/chapter2.xhtml\",\"type\":\"application\\/xhtml+xml\",\"title\":\"Chapter 2\",\"locations\":{\"cssSelector\":\"#chapter-2\",\"progression\":0,\"position\":2,\"totalProgression\":0.5},\"text\":{\"highlight\":\"El jard\u00edn de las palabras 2\"}}"
+      }
+    ]
+  },
+  "annotations.db": {
+    "schema": 1,
+    "annotations": []
+  }
+}

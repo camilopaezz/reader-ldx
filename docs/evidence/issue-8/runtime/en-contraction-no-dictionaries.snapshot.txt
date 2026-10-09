@@ -1,0 +1,16 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 12 visible nodes (25 total)
+Collapsed 13 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [scroll-area] [scrollable]
+@e2 [group] "Close lookup"
+@e4 [group] "Passage actions"
+@e6 [text-field] "can't" [editable]
+@e7 [text] "Lookup text"
+@e8 [group] "Source: es"
+@e10 [group] "Target: es"
+@e12 [group] "Choose ZIP"
+@e14 [group] "The garden of words 2, I can't forget the children's stories. These gardens hold words and memories., Passage 2.01: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Passage 2.02: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Passage 2.03: The traveler watches the garden. A song recalls the tree while children walk among flowers. Every word has its place in this story., Go to the second chapter, ., [2]"
+@e15 [webview] "The garden of words 2" [focused]
+@e18 [group] "link"
+@e20 [group] "[2]"

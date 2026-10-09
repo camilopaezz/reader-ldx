@@ -1,0 +1,20 @@
+{
+  "capturedUtc": "2026-10-09T10:55:59.552219+00:00",
+  "appVersion": "0.1.0",
+  "versionCode": 1,
+  "targetSdk": 36,
+  "installedApkPath": "/data/app/~~eRv_dD37ZX3kSuo0gfgqyQ==/dev.reader.ldx-FwroIJeeyDEp3aw394LCjg==/base.apk",
+  "installedApkSha256": "7b20f861c7bea04619db1d61aee52a46e59f6c4d6e39c4e54fc62bacdc6148b0",
+  "source": "9cd74c9",
+  "integratedSource": "2e26d4c",
+  "Android": "16/API36",
+  "ABI": "x86_64",
+  "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:16/BE2A.250530.026.D1/13818094:user/release-keys",
+  "WebView": "133.0.6943.137",
+  "wifi_on": "0",
+  "mobile_data": "0",
+  "booksSchema": 2,
+  "annotationsSchema": 1,
+  "agentDevice": "0.21.12",
+  "hub": "0.12.0"
+}
