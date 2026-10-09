@@ -1,28 +1,27 @@
 # Android prototype checkpoint
 
-Historical pause checkpoint from 2026-10-08. The owner has since requested continuation. Dictionary and annotation source is integrated at `0cc922d`, the build passed, and feature runtime verification has resumed. The saved branch details below describe the pause state; current issue comments and runtime reports record subsequent progress.
+The owner resumed work after two quota pauses. Current integration branch is `prototype/android-reader`, source/evidence through `6d578e8`. Latest main was fetched and fast-forwarded to `85de9a1` before implementation. Approved GitHub issues remain authoritative.
 
-## Integrated runnable source
+## Integrated slices
 
-Branch `prototype/android-reader`, feature integration commit `2e0b748`. Main was fetched and fast-forwarded to `85de9a1` before implementation.
+Issues #2, #3, #4, #5 and #6 are closed and integrated. Each report distinguishes passed, failed and unexercised checks. Closing an investigation does not pass the adoption gate.
 
-- #2 closed and integrated. Reading foundation implementation `695aa27`, evidence clarification `7530908`, independent integrated reflow/resume verification `9b655a6`. [Results](../evidence/issue-2/README.md).
-- #5 closed and integrated. Marked-note implementation and runtime evidence `f24a66e`. [Results](../evidence/issue-5/README.md).
-- Integrated Android build passes. [Build/run instructions](../../android/README.md). The integration worktree is `/home/camilo/Work/code/reader-ldx`.
+- [Reading foundation](../evidence/issue-2/README.md): offline import, pagination, selection, reflow and local resume. Precision remains paragraph/block-level.
+- [Offline dictionaries](../evidence/issue-3/README.md): four real packages, offline definitions and both translation directions, exact/alias/missing checks and malformed import. GCIDE plural morphology is unsupported; several combined checks remain unexercised.
+- [Annotations](../evidence/issue-4/README.md): persistence, range restoration, editing and bookmarks. The attempted cross-page drag failed. Both integrated passage-action routes were exercised.
+- [Marked notes](../evidence/issue-5/README.md): short/long overlays and restored source.
+- [Generic/nested notes](../evidence/issue-6/README.md): controlled classification matrix, nested navigation, relative image and restored source. Untyped commentary uses ordinary navigation. Direct nested source-backlink and combined preview cases remain unexercised.
 
-## Saved feature branches
+## Work in progress
 
-- #3 open, `prototype/03-offline-dictionaries`, commit `d371d05`, worktree `/home/camilo/Work/code/reader-ldx-issue-3`. Build and focused public input/output checks passed for four real packages. Android verification not exercised. GCIDE `flowers` has no supported base form and remains a failed compatibility check. [Report and resume steps](https://github.com/camilopaezz/reader-ldx/blob/d371d05/docs/evidence/issue-3/README.md). Dictionary fixtures remain in `/tmp/reader-dicts` and the worktree's ignored acquisition directory; the committed acquisition script reconstructs pinned hashes.
-- #4 open, `prototype/04-annotations`, commit `a620eb2`, worktree `/home/camilo/Work/code/reader-ldx-issue-4`. Build and runtime evidence cover highlight/recolor/delete, editable notes, immediate-save interruption, bookmarks, list navigation, warm resume, and exact-range restoration. Cross-page selection failed in the attempted controlled drag. Dedicated note shortcut and combined lookup/history checks remain unexercised. Implementation is not yet integrated. [Report](https://github.com/camilopaezz/reader-ldx/blob/a620eb2/docs/evidence/issue-4/README.md).
-- #6 open, `prototype/06-generic-nested-notes`, commit `e8ed40a`, worktree `/home/camilo/Work/code/reader-ldx-issue-6`. Generic extraction, nested navigation and relative-resource implementation and CC0 matrix fixtures are committed. Build passed; all Android checks not exercised. Fragment-only link interception needs runtime confirmation. [Report and resume steps](https://github.com/camilopaezz/reader-ldx/blob/e8ed40a/docs/evidence/issue-6/README.md).
-- #7 eligible but unstarted. #8 unstarted and open; it must wait for #3/#4/#6/#7 completion and integration, and remain open until the owner reviews provisional interactions. Parent #1 was neither closed nor rewritten.
+#7 remains open in isolated branch `prototype/07-slider-preview`, worktree `/home/camilo/Work/code/reader-ldx-issue-7`. Source checkpoint `06afa40` and integration `6112c49` implement live preview and an atomic two-position Return. The pause left a narrow locator-capture change and performed evidence uncommitted. The resumed slider agent owns that worktree and the sole emulator lease, and will finish the runtime matrix before integration.
 
-## Device and coordination
+#8 is open and unstarted, blocked by #7. After integration it must rerun the combined checks, prepare the recommendation separately from gate status, and remain open until the owner responds to the provisional-interaction review. Parent #1 has not been closed or rewritten. No PRs have been created.
 
-Dev_Pixel_8_API_36, emulator-5554, Android16/API36, WebView133.0.6943.137. No emulator lease is active. Last installed APK is the isolated #4 build; device remains offline at Spanish chapter1, font200%, margins1.0. Its saved block is p1-04; no annotations remain after removal checks. Do not clear app data. #4 uses a separate annotations.db and leaves the books schema unchanged.
+## Device and resumption
 
-Call T3 device_list/device_open on resume and use the returned exact agent-device executable, config and session flags. Grant one exclusive device lease at a time. No PRs were created.
+Dev_Pixel_8_API_36, emulator-5554, Android16/API36, WebView133.0.6943.137. Existing app data must be preserved. The slider APK migrated the books database to version2 and retained all five existing book rows. The current integration branch still builds version1 until #7 is merged. Do not install its older APK over the migrated device database.
 
-Shared code changes need narrow integration: #3 owns dictionary files and MainActivity lookup/import/Back wiring, with no engine/storage changes. #4 adds annotation files, engine decoration/reload hooks and menu/bookmark/list wiring. #6 extends #5 book-note state/listener/resource/overlay code and its fixture wiring. Preserve all menu actions and app-owned committed-position guards. Rebuild and verify integration changes; isolated runtime evidence does not establish the combined reader's behavior.
+Call T3 device_list/device_open and use the exact returned agent-device executable, config and session flags. One agent at a time owns physical emulator access. Do not clear app data. Keep selection-menu and reading-position changes coordinated, resolve narrow integration conflicts, and verify the combined APK.
 
-The adoption gate remains failed. Failed and unexercised checks must stay explicit and separate from the eventual Readium recommendation. No provisional UI choice has owner approval yet.
+[Build/run instructions](../../android/README.md) and fixture manifests reconstruct the inputs. The adoption gate remains failed because failed and unexercised checks remain. No provisional UI choice has owner approval yet.
