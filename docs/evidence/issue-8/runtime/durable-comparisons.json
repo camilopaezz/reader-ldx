@@ -153,5 +153,12 @@
       }
     },
     "sliderReturnByteEqual": true
+  },
+  {
+    "source": "handle-repeat-source",
+    "restored": "handle-repeat-final-restored",
+    "book": "Generic nested note fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
   }
 ]
