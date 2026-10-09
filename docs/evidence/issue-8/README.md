@@ -15,7 +15,7 @@ The combined runtime report will map all13 parent acceptance groups to actual ac
 ## Confirmed failed checks and follow-ups
 
 - [#9](https://github.com/camilopaezz/reader-ldx/issues/9): GCIDE `flowers` lacks an exact entry or supplied alias although `flower` is present. Honest no-entry behavior is correct, but required English monolingual plural compatibility fails. This is app/package-owned; Readium did supply the native selection.
-- [#10](https://github.com/camilopaezz/reader-ldx/issues/10): native handle extension at the controlled Spanish page boundary retained only `los`, with `niños` on the following page. On-page multiline extension worked. This is a reproduced engine/native-selection compatibility gap, not proof of universal impossibility. Investigate the native path before proposing an app-owned alternative.
+- [#10](https://github.com/camilopaezz/reader-ldx/issues/10): native handle extension at the controlled Spanish page boundary retained only `los`, with `niños` on the following page. On-page multiline extension worked. The lookup panel reappeared during the attempt. The app/native-selection cause is unresolved; this is not proof of an engine-only limitation or universal impossibility. Isolate panel/menu ownership from native pagination before proposing an alternative.
 
 Any required failed or unexercised subcheck keeps the gate failed. Completing an investigation or accepting a provisional interaction cannot turn a failure into a pass.
 
