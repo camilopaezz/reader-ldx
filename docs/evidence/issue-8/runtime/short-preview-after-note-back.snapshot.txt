@@ -1,0 +1,15 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 12 visible nodes (21 total)
+Collapsed 9 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Previous" [disabled]
+@e3 [group] "Next" [disabled]
+@e5 [group] "Fixtures" [disabled]
+@e7 [group] "Dictionary" [disabled]
+@e9 [group] "Close" [disabled]
+@e11 [group] "Smaller" [disabled]
+@e13 [group] "Larger" [disabled]
+@e15 [group] "Margins" [disabled]
+@e17 [seekbar] "Reading position preview slider"
+@e18 [group] "Cancel preview"
+@e21 [webview] "Marked short footnote fixture"

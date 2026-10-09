@@ -1,0 +1,8 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 4 visible nodes (10 total)
+Collapsed 6 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Collapse"
+@e3 [group] "Close note"
+@e5 [webview] "LONG NOTE 01: The garden keeps the reader at the source passage while this explanation scrolls. Every paragraph has a stable identifier for repeatable inspection., LONG NOTE 02: The garden keeps the reader at the source passage while this explanation scrolls. Every paragraph has a stable identifier for repeatable inspection., LONG NOTE 03: The garden keeps the reader at the source passage while this explanation scrolls. Every paragraph has a stable identifier for repeatable inspection., LONG NOTE 04: The garden keeps the reader at the source passage while this explanation scrolls. Every paragraph has a stable identifier for repeatable inspection." [focused]
+@e6 [group] "note-long"

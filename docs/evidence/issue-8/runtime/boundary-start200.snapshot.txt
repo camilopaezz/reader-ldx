@@ -1,0 +1,8 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 4 visible nodes (10 total)
+Collapsed 6 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "El jardín de las palabras 1, Árbol, canción y corazón. Espero que estas palabras no afecten la lectura., Pasaje 1.01: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Ir al segundo capítulo, ., [2]"
+@e2 [webview] "El jardín de las palabras 1" [focused]
+@e5 [group] "link"
+@e7 [group] "[2]"

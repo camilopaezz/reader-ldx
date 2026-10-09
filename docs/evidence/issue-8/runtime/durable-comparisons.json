@@ -1,0 +1,157 @@
+[
+  {
+    "source": "slider-source",
+    "restored": "slider-back-cancel",
+    "book": "El jard\u00edn de las palabras",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "slider-source",
+    "restored": "slider-pointer-restart",
+    "book": "El jard\u00edn de las palabras",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "short-restart-source",
+    "restored": "short-restart-restored",
+    "book": "Marked short footnote fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "long-warm-source",
+    "restored": "long-warm-actual-dismiss",
+    "book": "Marked long footnote fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "generic-source",
+    "restored": "nested-source-backlink-dismiss",
+    "book": "Generic nested note fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "generic-source",
+    "restored": "generic-note-restart",
+    "book": "Generic nested note fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "short-preview-ready",
+    "restored": "short-note-during-preview",
+    "book": "Marked short footnote fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "short-preview-ready",
+    "restored": "preview-back-final",
+    "book": "Marked short footnote fixture",
+    "committedLocatorByteEqual": true,
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "chapter-jump-before",
+    "destination": "chapter-jump-after",
+    "from": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jard\u00edn de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-14",
+        "progression": 0.5001543686322939,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.14: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "to": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jard\u00edn de las palabras 2"
+      }
+    },
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "diagnostic-search-actual-before",
+    "destination": "diagnostic-search-actual-after",
+    "from": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jard\u00edn de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-24",
+        "progression": 0.8335906143871565,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.24: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "to": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jard\u00edn de las palabras 2"
+      }
+    },
+    "sliderReturnByteEqual": true
+  },
+  {
+    "source": "diagnostic-bookmark-actual-before",
+    "destination": "diagnostic-bookmark-actual-after",
+    "from": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jard\u00edn de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-24",
+        "progression": 0.8335906143871565,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.24: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "to": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jard\u00edn de las palabras 2"
+      }
+    },
+    "sliderReturnByteEqual": true
+  }
+]

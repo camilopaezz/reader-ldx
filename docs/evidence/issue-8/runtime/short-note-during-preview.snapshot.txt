@@ -1,0 +1,9 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 5 visible nodes (9 total)
+Collapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Expand"
+@e3 [group] "Close note"
+@e5 [webview] "NOTA CORTA: El árbol conserva su canción., Este texto está en cursiva." [focused]
+@e6 [group] "note-short"
+@e7 [group] "note-short-text"

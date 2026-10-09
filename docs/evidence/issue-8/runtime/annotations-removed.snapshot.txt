@@ -1,0 +1,5 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 1 visible nodes (2 total)
+Collapsed 1 Android helper node from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Close list"

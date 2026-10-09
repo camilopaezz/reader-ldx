@@ -1,0 +1,8 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 4 visible nodes (11 total)
+Collapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Collapse"
+@e3 [group] "Close note"
+@e5 [webview] "ENDNOTE PARAGRAPH 02: This explanation is long enough to scroll. The underlying source remains unchanged while the reader explores book notes., ENDNOTE PARAGRAPH 03: This explanation is long enough to scroll. The underlying source remains unchanged while the reader explores book notes., ENDNOTE PARAGRAPH 04: This explanation is long enough to scroll. The underlying source remains unchanged while the reader explores book notes., ENDNOTE PARAGRAPH 05: This explanation is long enough to scroll. The underlying source remains unchanged while the reader explores book notes., ENDNOTE PARAGRAPH 06: This explanation is long enough to scroll. The underlying source remains unchanged while the reader explores book notes." [focused]
+@e6 [group] "endnote-1"

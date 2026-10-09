@@ -1,0 +1,12 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 8 visible nodes (16 total)
+Collapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "GENERIC SOURCE, SOURCE STAYS HERE. The tree remembers its roots., [UNTYPED COMMENTARY], [ORDINARY CHAPTER], [MARKED NOTE], [ENDNOTES LIST], [ROLE ENDNOTE], [GENERIC ENDNOTE]"
+@e2 [webview] "Generic source" [focused]
+@e5 [group] "[GENERIC ENDNOTE]"
+@e7 [group] "[ROLE ENDNOTE]"
+@e9 [group] "[ENDNOTES LIST]"
+@e11 [group] "[MARKED NOTE]"
+@e13 [group] "[ORDINARY CHAPTER]" [focused]
+@e15 [group] "[UNTYPED COMMENTARY]"

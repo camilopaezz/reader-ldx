@@ -1,0 +1,10 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 6 visible nodes (13 total)
+Collapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Expand"
+@e3 [group] "Close note"
+@e5 [webview] "GENERIC ENDNOTE ONE, Italic note context survives., Red and blue publication image, [SOURCE BACKLINK], [NESTED NOTE]" [focused]
+@e6 [group] "endnote-1"
+@e10 [group] "[NESTED NOTE]"
+@e12 [group] "[SOURCE BACKLINK]"
