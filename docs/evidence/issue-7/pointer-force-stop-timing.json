@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/home/camilo/.t3/userdata/device/bin/agent-device",
+    "gesture",
+    "pan",
+    "380",
+    "1906",
+    "480",
+    "0",
+    "5000",
+    "--platform",
+    "android",
+    "--serial",
+    "emulator-5554",
+    "--config",
+    "/home/camilo/.t3/userdata/device/hosts/25bf8e1a2393f1108d37029b.json",
+    "--session",
+    "t3-63ca972f90f73864237a5e6b"
+  ],
+  "samples": [
+    {
+      "elapsedMs": 2259.929,
+      "gestureProcessRunning": true,
+      "interruption": "kill"
+    }
+  ],
+  "gestureExitCode": 0,
+  "elapsedMs": 5774.263
+}

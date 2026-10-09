@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "9cd74c9",
+  "apkSha256": "0f3f006bcb7209cc8a6ed813b09b831a5faa1a03b2d10a9f4695237bd5c16250",
+  "readerSchema": 2,
+  "android": "16/API36",
+  "abi": "x86_64",
+  "display": "1080x2400 density420",
+  "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:16/BE2A.250530.026.D1/13818094:user/release-keys",
+  "webView": "133.0.6943.137",
+  "agentDevice": "0.21.12",
+  "wifi": 0,
+  "mobileData": 0,
+  "readium": "3.1.2",
+  "runDateUtc": "2026-10-08",
+  "notes": "Installed v2 updates preserve app data; no clear/reset performed. One host emulator exit/reboot interrupted an earlier stopping sequence."
+}

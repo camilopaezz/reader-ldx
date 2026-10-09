@@ -1,0 +1,1245 @@
+[
+  {
+    "capture": "back-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "bookmark-style-jump",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "cancel-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "cancel-restart-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "chapter-jump",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "checkpoint-stopped",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 5
+  },
+  {
+    "capture": "commit-C",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "corrected-preview",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "epoch2-preview-B",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "epoch2-source",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-B-restart",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-B-stopped",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-preview-B",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-source-onward",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-source-preview",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-source-return",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-v2-commit-restart",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "final-v2-commit-stopped",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "fixed-return-B",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "live-drag-middle",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 5
+  },
+  {
+    "capture": "migration-after",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 5
+  },
+  {
+    "capture": "migration-before",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 1,
+    "bookCount": 5
+  },
+  {
+    "capture": "onward-C",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "onward-D",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "onward-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "ordinary-D",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "ordinary-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "pointer-restart-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "pointer-stopped",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "preview-B",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "preview-C",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "preview-restart-E",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "restart-D",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "return-A",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "return-B-after-E",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "return-B-after-page",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "return-B",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-04",
+        "progression": 0.16671812287743132,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.04: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "search-jump",
+    "committed": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#chapter-2",
+        "progression": 0,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "El jardín de las palabras 2"
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "source-A",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "spanish-source",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-19",
+        "progression": 0.6668724915097253,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.19: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": null,
+    "schema": 2,
+    "bookCount": 5
+  },
+  {
+    "capture": "warm-preview",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  },
+  {
+    "capture": "warm-resume-preview",
+    "committed": {
+      "href": "EPUB/chapter1.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "El jardín de las palabras",
+      "locations": {
+        "cssSelector": "#p-1-09",
+        "progression": 0.33343624575486264,
+        "position": 1,
+        "totalProgression": 0
+      },
+      "text": {
+        "highlight": "Pasaje 1.09: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "return": {
+      "href": "EPUB/chapter2.xhtml",
+      "type": "application/xhtml+xml",
+      "title": "Chapter 2",
+      "locations": {
+        "cssSelector": "#p-2-14",
+        "progression": 0.5001543686322939,
+        "position": 2,
+        "totalProgression": 0.5
+      },
+      "text": {
+        "highlight": "Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+      }
+    },
+    "schema": 2,
+    "bookCount": 4
+  }
+]

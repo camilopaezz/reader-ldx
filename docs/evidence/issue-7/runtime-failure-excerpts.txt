@@ -1,0 +1,7 @@
+These lines were preserved from exec tool output during the failed/intermediate APK run, not a complete original logcat archive. Final-source logs are separate.
+
+10-08 21:48:47.035 5169 5169 E ReaderEvidence: Slider commit failed: Preview has not reached its destination
+10-08 21:48:47.035 5169 5169 E ReaderEvidence: java.lang.IllegalStateException: Preview has not reached its destination
+10-08 21:49:51.084 5872 5872 I ReaderEvidence: PREVIEW_WAIT requested={"href":"EPUB/chapter2.xhtml","type":"application/xhtml+xml","locations":{"progression":0.61,"totalProgression":0.8049999999999999}} current={"href":"EPUB/chapter2.xhtml","type":"application/xhtml+xml","title":"Chapter 2","locations":{"progression":0.6668724915097253,"position":2,"totalProgression":0.5}} viewport={"offset":1645.7142333984375,"viewport":412,"width":2468}
+
+The href slashes are normalized here for readability. The captured requested/current progression and DOM geometry values are unchanged.
