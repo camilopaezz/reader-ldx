@@ -1,0 +1,21 @@
+Page: dev.reader.ldx
+App: dev.reader.ldx
+Snapshot: 17 visible nodes (36 total)
+Collapsed 19 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.
+@e1 [group] "Previous"
+@e3 [group] "Next"
+@e5 [group] "Fixtures"
+@e7 [group] "Dictionary"
+@e9 [group] "Close"
+@e11 [group] "Smaller"
+@e13 [group] "Larger"
+@e15 [group] "Margins"
+@e17 [group] "Annotations"
+@e19 [group] "Add bookmark"
+@e21 [seekbar] "Reading position preview slider"
+@e22 [group] "Return to 33%"
+@e24 [group] "Chapter"
+@e26 [group] "Search result"
+@e28 [group] "Bookmark style"
+@e30 [group] "Pasaje 2.10: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.11: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.13: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.14: La viajera mira el jardín. Una canción recuerda el árbol, mientras los niños caminan entre flores. Cada palabra tiene su lugar en esta historia."
+@e31 [webview] "El jardín de las palabras 2" [focused]
