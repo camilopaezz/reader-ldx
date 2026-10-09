@@ -1,6 +1,6 @@
 # Android prototype checkpoint
 
-The owner resumed work after two quota pauses. Current integration branch is `prototype/android-reader`, source/evidence through `2e26d4c`. Latest main was fetched and fast-forwarded to `85de9a1` before implementation. Approved GitHub issues remain authoritative.
+The owner resumed work after two quota pauses. Current integration branch is `prototype/android-reader`, source through `9cd74c9` and combined evidence `270a08c`. Latest main was fetched and fast-forwarded to `85de9a1` before implementation. Approved GitHub issues remain authoritative.
 
 ## Integrated slices
 
@@ -12,11 +12,13 @@ Issues #2 through #7 are closed and integrated. Each report distinguishes passed
 - [Marked notes](../evidence/issue-5/README.md): short/long overlays and restored source.
 - [Generic/nested notes](../evidence/issue-6/README.md): controlled classification matrix, nested navigation, relative image and restored source. Untyped commentary uses ordinary navigation. Direct nested source-backlink and combined preview cases remain unexercised.
 
-## Combined validation in progress
+## Agent work complete, owner review pending
 
-#7 source `9cd74c9` and complete slice evidence `57e1acd` are integrated. The combined build passed and an independent orchestrator sample verified Return, onward, cancellation and durable restoration. [Slider results](../evidence/issue-7/README.md), [integration sample](../evidence/issue-7/integrated/README.md).
+#7 source `9cd74c9` and slice evidence `57e1acd` are integrated. #8 complete combined runtime evidence `270a08c` and independent audit `2d76f69` are integrated. No #8 implementation edits were needed. [Combined results and recommendation](../evidence/issue-8/README.md), [13-group runtime report](../evidence/issue-8/runtime-report.md), [owner choices](../evidence/issue-8/owner-review.md).
 
-#8 is open with all blockers complete. Runtime validation runs in `prototype/08-combined-validation`, worktree `/home/camilo/Work/code/reader-ldx-issue-8`. Its agent has exclusive emulator access. A separate build/fixture/evidence audit runs in `prototype/08-evidence-audit`, worktree `/home/camilo/Work/code/reader-ldx-issue-8-audit`, with no device access. The root prepares the combined recommendation and owner-review request. #8 must remain open until the owner responds. Parent #1 is unchanged. No PRs have been created.
+Gate FAILED for GCIDE plural compatibility #9 and controlled page-boundary selection #10. The lookup-panel confound keeps #10 attribution unresolved. Unexercised variants and precise race interleavings remain explicit. Recommendation is retain Readium with limitations for the prototype, with production adoption still gated. #8 remains open until the owner responds; #1 is unchanged. No PRs were created.
+
+Runtime worktree `/home/camilo/Work/code/reader-ldx-issue-8`, branch `prototype/08-combined-validation`, is clean at `270a08c`. Audit worktree `/home/camilo/Work/code/reader-ldx-issue-8-audit`, branch `prototype/08-evidence-audit`, is clean at `2d76f69`. No device lease or agent-device session remains active. Installed APK SHA256 `7b20f861c7bea04619db1d61aee52a46e59f6c4d6e39c4e54fc62bacdc6148b0`, schema2, offline0/0, last book generic fixture at `#source-heading`, transient UI closed.
 
 ## Device and resumption
 
