@@ -93,7 +93,18 @@ class DictionaryStore(private val root: File) {
                 kind = "Package synonym / base form"
             }
         }
-        if (found.isEmpty()) return DictionaryMatch(selected, null, null, "No entry. No supported package base form.")
+        if (found.isEmpty() && info.source == "en") {
+            for (candidate in EnglishBaseForms.candidates(selected)) {
+                entries(File(info.directory, "$stem.idx"), candidate) { word, offset, length ->
+                    if (word == candidate) found += Triple(word, offset, length)
+                }
+            }
+            if (found.isNotEmpty()) kind = "Explicit English base form"
+        }
+        if (found.isEmpty()) return DictionaryMatch(selected, null, null, "No entry. No supported base form.")
+        if (kind != "Exact match" && found.map { it.first }.distinct().size > 1) {
+            kind += " (ambiguous: multiple headwords)"
+        }
         val definitions = RandomAccessFile(File(info.directory, "$stem.dict"), "r").use { data ->
             found.map { entry -> val bytes = ByteArray(entry.third); data.seek(entry.second); data.readFully(bytes); bytes.toString(Charsets.UTF_8) }
         }

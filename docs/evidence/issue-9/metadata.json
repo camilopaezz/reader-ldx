@@ -1,0 +1,15 @@
+{
+  "time_utc": "2026-10-10T20:46:24.407756+00:00",
+  "base_commit": "6bf9887c1076afeee5e975206957691e859e6865",
+  "branch": "prototype/09-english-base-forms",
+  "apk": "/home/camilo/.t3/worktrees/reader-ldx/prototype-09-english-base-forms/android/app/build/outputs/apk/debug/app-debug.apk",
+  "apk_sha256": "7961ddc6a0eac08f78e77b040d0010e9f5fb1ab01db69c2f2b935da2f6e6ea7b",
+  "app_version": "0.1.0",
+  "compile_target_sdk": 36,
+  "min_sdk": 23,
+  "host_public_tests": "PASS: 2 tests, 0 failures, 0 errors",
+  "apk_build": "PASS",
+  "android_runtime": "NOT EXERCISED: issue-10 still owns exclusive emulator lease",
+  "lease_owner": "issue-10 /root prototype/10-cross-page-selection session t3-d026bde05ce9e4bf68a6a3fa\n",
+  "device_operations_performed": false
+}

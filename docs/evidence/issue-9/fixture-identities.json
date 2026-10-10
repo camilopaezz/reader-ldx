@@ -1,0 +1,64 @@
+[
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/es-es.zip",
+    "sha256": "ea80cc791b76c8a40d6d770e0d71a67d3e9075a1be98033883e7ce4f50ac71b7",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/es-es.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/es-es.tar.zst",
+    "sha256": "20f38332aa1fce3a7a3bfdcefd10b9299c7c7d20a364412005ebe3857a89f414",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/es-es.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/es-en.zip",
+    "sha256": "2b5959caf133d38f629c42fd4da8d254628ea2c3a62307691c6a78dd19e3a00f",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/es-en.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/es-en.tar.zst",
+    "sha256": "e0bb41cc3fca102a3112dad0e23bc306f0301c30affc74e930a2977b2eb39a5d",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/es-en.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/en-es.zip",
+    "sha256": "55c0e95e9c19886d79800535a1b8c6779016fea7566cbb75fc29317a6a6d0717",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/en-es.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/en-es.tar.zst",
+    "sha256": "6be9c556dd561220988e0d752b1348915d1bbbc0fe5e6bf84b12268b5c551bf6",
+    "verified": true,
+    "source": "https://github.com/xxyzz/wiktionary_stardict/releases/download/20260928/en-es.tar.zst",
+    "licence": "CC BY-SA 4.0 as declared by original .ifo"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/gcide.zip",
+    "sha256": "55cc1b67920f82659088b15c6e8b9d787236b7fe5b345c8fc7a0b778509ec375",
+    "verified": true,
+    "source": "https://build.koreader.rocks/download/dict/gcide.tar.gz",
+    "licence": "GNU GPL version3 or later, GCIDE project licence"
+  },
+  {
+    "file": "/home/camilo/Work/code/reader-ldx-issue-8-audit/fixtures/dictionaries/downloaded/gcide.tar.gz",
+    "sha256": "be3c1293e3ebcd9bfbfea24b0a73381def27be665dec4c23c03896d4b42ab7f1",
+    "verified": true,
+    "source": "https://build.koreader.rocks/download/dict/gcide.tar.gz",
+    "licence": "GNU GPL version3 or later, GCIDE project licence"
+  },
+  {
+    "file": "fixtures/epub/foundation-en.epub",
+    "sha256": "06910accd7896736ece527c4ed56c682dbb8ef7e8661cae3f01ed802933e89fc",
+    "source": "fixtures/epub/generate.py",
+    "licence": "CC0-1.0"
+  }
+]
