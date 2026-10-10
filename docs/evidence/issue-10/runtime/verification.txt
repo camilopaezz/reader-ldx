@@ -1,0 +1,22 @@
+PASS fixed-source -> fixed-edge-after committed
+PASS fixed-source -> fixed-edge-after Return
+PASS active-source -> active-restored committed
+PASS active-source -> active-restored Return
+PASS active-source -> active-restored annotations
+PASS annotation-saved -> annotation-restarted committed
+PASS annotation-saved -> annotation-restarted Return
+PASS annotation-saved -> annotation-restarted annotations
+PASS annotation-saved -> annotation-reflow-restart committed
+PASS annotation-saved -> annotation-reflow-restart Return
+PASS annotation-saved -> annotation-reflow-restart annotations
+PASS replay-source -> replay-selected committed
+PASS replay-source -> replay-selected Return
+PASS replay-source -> replay-selected annotations
+PASS replay-source -> replay-restored committed
+PASS replay-source -> replay-restored Return
+PASS replay-source -> replay-restored annotations
+PASS active force-stop before UP
+PASS offline
+PASS replay immediate lookup / dismissed panel
+Archived native boundary text: 'Una'
+FAIL required cross-page selection. Gate remains FAILED.

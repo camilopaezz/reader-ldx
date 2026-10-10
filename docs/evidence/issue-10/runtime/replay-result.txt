@@ -1,0 +1,3 @@
+PASS immediate lookup and dismissed-panel ownership
+Selected: 'Una'
+FAIL required native cross-page range: expected Una canción

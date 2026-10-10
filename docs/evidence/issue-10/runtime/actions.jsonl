@@ -1,0 +1,346 @@
+{"utc": "2026-10-10T20:40:02.250945+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:40:07.052680+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (5 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.09: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.10: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:40:07.754340+00:00", "args": ["help"]}
+{"exit": 1, "output": "Error (INVALID_ARGS): Flags --platform, --serial, --session are not supported for command help.\nHint: Check command arguments and run --help for usage examples.\nDiagnostic ID: mv2uytin-2c1af8d2\nDiagnostics Log: /home/camilo/.agent-device/logs/t3-d026bde05ce9e4bf68a6a3fa/2026-10-10/2026-10-10T20-40-07-921Z-mv2uytin-2c1af8d2.ndjson\n"}
+{"utc": "2026-10-10T20:40:12.913442+00:00", "args": ["click", "540", "1000"]}
+{"exit": 0, "output": "Tapped (540, 1000)\n"}
+{"utc": "2026-10-10T20:40:13.488335+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (15 total)\nCollapsed 6 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e11 [group] \"Pasaje 2.09: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.10: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:40:17.654110+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (596, 333)\n"}
+{"utc": "2026-10-10T20:40:18.341964+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:40:25.919290+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/typography-initial.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/typography-initial.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:40:28.084809+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (540, 1330)\n"}
+{"utc": "2026-10-10T20:40:29.245332+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\" [disabled]\n@e4 [group] \"Larger\" [disabled]\n@e6 [group] \"Use wider margins\" [disabled]\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:40:30.863774+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/typography-current.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/typography-current.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:40:43.313320+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (724, 1057)\n"}
+{"utc": "2026-10-10T20:40:46.564403+00:00", "args": ["click", "@e4"]}
+{"exit": 1, "output": "Error (COMMAND_FAILED): Ref @e4 belongs to an expired ref frame \u2014 a device action since the snapshot invalidated it\nHint: The UI may have changed since these refs were issued, so they no longer represent current device state. Take a new snapshot before relying on or interacting with them.\nDiagnostic ID: mv2uzo51-e903327e\nDiagnostics Log: /home/camilo/.agent-device/remote-diagnostics/t3-d026bde05ce9e4bf68a6a3fa/requests/8fb471cc3dfc5857.ndjson\n"}
+{"utc": "2026-10-10T20:40:49.878748+00:00", "args": ["click", "@e4"]}
+{"exit": 1, "output": "Error (COMMAND_FAILED): Ref @e4 belongs to an expired ref frame \u2014 a device action since the snapshot invalidated it\nHint: The UI may have changed since these refs were issued, so they no longer represent current device state. Take a new snapshot before relying on or interacting with them.\nDiagnostic ID: mv2uzq6m-d189fc0d\nDiagnostics Log: /home/camilo/.agent-device/remote-diagnostics/t3-d026bde05ce9e4bf68a6a3fa/requests/dec7b9b43cbd6364.ndjson\n"}
+{"utc": "2026-10-10T20:40:52.423326+00:00", "args": ["click", "@e8"]}
+{"exit": 1, "output": "Error (COMMAND_FAILED): Ref @e8 belongs to an expired ref frame \u2014 a device action since the snapshot invalidated it\nHint: The UI may have changed since these refs were issued, so they no longer represent current device state. Take a new snapshot before relying on or interacting with them.\nDiagnostic ID: mv2uzsb9-cc5d1804\nDiagnostics Log: /home/camilo/.agent-device/remote-diagnostics/t3-d026bde05ce9e4bf68a6a3fa/requests/f730660f0e4bcc9e.ndjson\n"}
+{"utc": "2026-10-10T20:40:53.235321+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:40:57.207040+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:40:57.834602+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (724, 1057)\n"}
+{"utc": "2026-10-10T20:41:01.209087+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:41:02.636018+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (724, 1057)\n"}
+{"utc": "2026-10-10T20:41:06.183540+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:41:07.667373+00:00", "args": ["click", "@e8"]}
+{"exit": 0, "output": "Tapped @e8 (821, 1645)\n"}
+{"utc": "2026-10-10T20:41:09.968426+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\"\n"}
+{"utc": "2026-10-10T20:41:11.415395+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/font200-page.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/font200-page.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:41:19.491795+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (14 total)\nCollapsed 5 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:41:20.805503+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (848, 333)\n"}
+{"utc": "2026-10-10T20:41:23.161437+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 4 visible nodes (7 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Annotations\"\n@e4 [group] \"Dictionaries\"\n@e6 [group] \"Prototype diagnostics\"\n"}
+{"utc": "2026-10-10T20:41:32.042618+00:00", "args": ["press", "back"]}
+{"exit": 1, "output": "Error (INVALID_ARGS): Target \"back\" is not a @ref, selector, or \"x y\" point. To match by visible text, use text=\"back\" (or label=/id=/role=), or pass an @ref from snapshot.\nHint: Check command arguments and run --help for usage examples.\nDiagnostic ID: mv2v0mzm-1cf1f417\n"}
+{"utc": "2026-10-10T20:41:33.002828+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 4 visible nodes (7 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Annotations\"\n@e4 [group] \"Dictionaries\"\n@e6 [group] \"Prototype diagnostics\"\n"}
+{"utc": "2026-10-10T20:41:33.982575+00:00", "args": ["click", "@e7"]}
+{"exit": 0, "output": "Tapped @e7 (700, 735)\n"}
+{"utc": "2026-10-10T20:41:36.545505+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/current-boundary.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/current-boundary.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:41:47.257473+00:00", "args": ["click", "text=Close diagnostics"]}
+{"exit": 1, "output": "Error (INVALID_ARGS): Target \"text=Close diagnostics\" is not a @ref, selector, or \"x y\" point. Selector values with spaces need quotes, e.g. text=\"Sign in\".\nHint: Check command arguments and run --help for usage examples.\nDiagnostic ID: mv2v0yh6-99e057d1\n"}
+{"utc": "2026-10-10T20:41:47.834454+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Chapter\"\n@e4 [group] \"Search result\"\n@e6 [group] \"Bookmark style\"\n@e8 [group] \"Close diagnostics\"\n"}
+{"utc": "2026-10-10T20:41:49.133863+00:00", "args": ["click", "text=Close controls"]}
+{"exit": 1, "output": "Error (INVALID_ARGS): Target \"text=Close controls\" is not a @ref, selector, or \"x y\" point. Selector values with spaces need quotes, e.g. text=\"Sign in\".\nHint: Check command arguments and run --help for usage examples.\nDiagnostic ID: mv2v0zx2-2e73c425\n"}
+{"utc": "2026-10-10T20:41:49.701973+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/current-boundary.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/current-boundary.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:41:57.449273+00:00", "args": ["click", "@e8"]}
+{"exit": 0, "output": "Tapped @e8 (719, 1819)\n"}
+{"utc": "2026-10-10T20:41:58.990161+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (14 total)\nCollapsed 5 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:42:00.866466+00:00", "args": ["click", "@e7"]}
+{"exit": 0, "output": "Tapped @e7 (974, 333)\n"}
+{"utc": "2026-10-10T20:42:03.353554+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/current-boundary.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/current-boundary.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:42:16.023820+00:00", "args": ["longpress", "730", "2090", "--duration", "900"]}
+{"exit": 1, "output": "Error (INVALID_ARGS): Unknown flag: --duration\nHint: Check command arguments and run --help for usage examples.\nDiagnostic ID: mv2v1ks1-169d70c5\nDiagnostics Log: /home/camilo/.agent-device/logs/t3-d026bde05ce9e4bf68a6a3fa/2026-10-10/2026-10-10T20-42-16-564Z-mv2v1ks1-169d70c5.ndjson\n"}
+{"utc": "2026-10-10T20:42:16.811544+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:42:18.882205+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/baseline-immediate-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/baseline-immediate-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:42:29.971452+00:00", "args": ["longpress", "--help"]}
+{"exit": 0, "output": "Usage:\n  agent-device longpress <x y|@ref|selector> [durationMs]\n\nHold a UI target by snapshot ref, selector, or coordinates to open a context menu or perform another hold gesture. Set durationMs when the default hold duration is unsuitable. Duration is positional, for example longpress @e12 800 or longpress 300 500 800.\n\nCommand flags:\n  --settle             After the action, wait for the UI to go quiet and return the settled diff vs the pre-action tree in the same response (best-effort; never fails the action)\n  --settle-quiet <ms>  Settle: quiet window the UI must hold to count as settled (default 500ms)\n  --timeout <ms>       Boot/Open/Prepare: startup budget covering the device boot (and runner preparation for prepare). Replay/Snapshot/Test: maximum wall-clock time for the command or attempt. With --settle: the settle-wait deadline (default 10s)\n  --depth, -d <depth>  Snapshot: limit snapshot depth\n  --scope, -s <scope>  Snapshot: scope snapshot to label/identifier\n  --raw                Snapshot: raw node output\n"}
+{"utc": "2026-10-10T20:42:32.240482+00:00", "args": ["gesture", "--help"]}
+{"exit": 0, "output": "Usage:\n  agent-device gesture <pan|fling|swipe|pinch|rotate|transform|drag> ...\n\nPerform a structured pan, fling, swipe, pinch, rotate, transform, or drag gesture. Select the gesture kind, then provide only the inputs that apply to that kind. Argument shapes: pan <x> <y> <dx> <dy> [durationMs], fling <up|down|left|right> <x> <y> [distance], swipe <left|right|left-edge|right-edge>, pinch <scale> [x] [y], rotate <degrees> [x] [y], transform <x> <y> <dx> <dy> <scale> <degrees> [durationMs], or drag <source-selector|pinned-ref> <destination-selector|pinned-ref> [sourceHoldMs] [moveMs] [destinationHoldMs]. For command plans, output only command lines. Android transform verification should use all app-observable effects, for example wait text \"pan changed yes\", wait text \"pinch changed yes\", and wait text \"rotate changed yes\", not exact transform values.\n\nCommand flags:\n  --pointer-count <1|2>  Gesture pan: number of touch pointers (default 1)\n"}
+{"utc": "2026-10-10T20:42:35.055913+00:00", "args": ["longpress", "730", "2090"]}
+{"exit": 0, "output": "Long pressed (730, 2090)\n"}
+{"utc": "2026-10-10T20:42:41.085314+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:42:46.489060+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/baseline-immediate-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/baseline-immediate-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:42:54.514935+00:00", "args": ["click", "text=\"Close lookup\""]}
+{"exit": 0, "output": "Tapped text=\"Close lookup\" (180, 1100)\n"}
+{"utc": "2026-10-10T20:42:57.432525+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/baseline-handles.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/baseline-handles.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:43:09.774689+00:00", "args": ["gesture", "pan", "835", "2190", "230", "0", "5000"]}
+{"exit": 0, "output": "Panned (835, 2190) by (230, 0)\n"}
+{"utc": "2026-10-10T20:43:41.359119+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/baseline-edge.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/baseline-edge.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:43:47.032442+00:00", "args": ["snapshot", "-i"]}
+{"utc": "2026-10-10T20:43:47.230811+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:44:38.040545+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:44:39.155033+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (180, 1100)\n"}
+{"utc": "2026-10-10T20:44:40.198399+00:00", "args": ["gesture", "pan", "835", "2190", "230", "-100", "1500"]}
+{"exit": 0, "output": "Panned (835, 2190) by (230, -100)\n"}
+{"utc": "2026-10-10T20:45:00.466256+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/baseline-second-edge.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/baseline-second-edge.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:45:46.861572+00:00", "args": ["install", "dev.reader.ldx", "android/app/build/outputs/apk/debug/app-debug.apk"]}
+{"exit": 0, "output": "Installed: dev.reader.ldx\n"}
+{"utc": "2026-10-10T20:45:49.145534+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:45:56.763776+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/fixed-restart.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/fixed-restart.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:45:59.559622+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 nodes\n@e2 [webview] \"dev.reader.ldx:id/webView\"\n"}
+{"utc": "2026-10-10T20:46:05.232547+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:12.741739+00:00", "args": ["longpress", "730", "2090", "800"]}
+{"exit": 0, "output": "Long pressed (730, 2090)\n"}
+{"utc": "2026-10-10T20:46:14.237077+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/fixed-immediate-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/fixed-immediate-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:46:16.001375+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:16.420952+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (180, 1100)\n"}
+{"utc": "2026-10-10T20:46:16.839311+00:00", "args": ["gesture", "pan", "835", "2190", "230", "0", "2500"]}
+{"exit": 0, "output": "Panned (835, 2190) by (230, 0)\n"}
+{"utc": "2026-10-10T20:46:20.058759+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/fixed-edge.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/fixed-edge.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:46:21.725432+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:34.920449+00:00", "args": ["gesture", "pan", "835", "2190", "230", "-50", "5000"]}
+{"exit": 0, "output": "Panned (835, 2190) by (230, -50)\n"}
+{"utc": "2026-10-10T20:46:40.773375+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/fixed-edge-repeat.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/fixed-edge-repeat.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:46:42.873043+00:00", "args": ["click", "700", "1950"]}
+{"exit": 0, "output": "Tapped (700, 1950)\n"}
+{"utc": "2026-10-10T20:46:43.329666+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 8 visible nodes (15 total)\nCollapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Dictionary lookup\"\n@e4 [group] \"Highlight\"\n@e6 [group] \"Annotation note\"\n@e8 [group] \"Back to handles\"\n@e10 [group] \"Dismiss selection\"\n@e12 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e13 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:53.926672+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (217, 1729)\n"}
+{"utc": "2026-10-10T20:46:54.292138+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/fixed-boundary-refreshed-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/fixed-boundary-refreshed-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:46:55.942281+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:56.326621+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (485, 1100)\n"}
+{"utc": "2026-10-10T20:46:56.750669+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 8 visible nodes (15 total)\nCollapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Dictionary lookup\"\n@e4 [group] \"Highlight\"\n@e6 [group] \"Annotation note\"\n@e8 [group] \"Back to handles\"\n@e10 [group] \"Dismiss selection\"\n@e12 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e13 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:46:57.042306+00:00", "args": ["click", "@e10"]}
+{"exit": 0, "output": "Tapped @e10 (220, 2233)\n"}
+{"utc": "2026-10-10T20:46:57.524137+00:00", "args": ["longpress", "220", "1170", "800"]}
+{"exit": 0, "output": "Long pressed (220, 1170)\n"}
+{"utc": "2026-10-10T20:46:58.964835+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-immediate.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-immediate.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:47:00.603705+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:47:04.420881+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (180, 1100)\n"}
+{"utc": "2026-10-10T20:47:04.802411+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-handles.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-handles.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:47:16.703831+00:00", "args": ["gesture", "pan", "397", "1260", "380", "175", "1500"]}
+{"exit": 0, "output": "Panned (397, 1260) by (380, 175)\n"}
+{"utc": "2026-10-10T20:47:18.915202+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-expanded.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-expanded.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:47:20.848766+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:47:21.164551+00:00", "args": ["click", "245", "965"]}
+{"exit": 0, "output": "Tapped (245, 965)\n"}
+{"utc": "2026-10-10T20:47:21.602984+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:47:28.569679+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-actions.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-actions.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:47:30.200211+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:47:40.082207+00:00", "args": ["click", "350", "1040"]}
+{"exit": 0, "output": "Tapped (350, 1040)\n"}
+{"utc": "2026-10-10T20:47:40.448176+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (14 total)\nCollapsed 5 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:47:40.898361+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (596, 333)\n"}
+{"utc": "2026-10-10T20:47:41.372025+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-refreshed-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-refreshed-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:47:43.878302+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:47:44.410234+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (724, 1057)\n"}
+{"utc": "2026-10-10T20:47:44.889829+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\" [disabled]\n@e4 [group] \"Larger\" [disabled]\n@e6 [group] \"Use wider margins\" [disabled]\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:47:45.787100+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (540, 1330)\n"}
+{"utc": "2026-10-10T20:47:46.454424+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\" [disabled]\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:47:53.752814+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\" [disabled]\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:00.292816+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (356, 1057)\n"}
+{"utc": "2026-10-10T20:48:02.738665+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:02.998456+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (540, 1330)\n"}
+{"utc": "2026-10-10T20:48:05.484911+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:05.769553+00:00", "args": ["click", "@e8"]}
+{"exit": 0, "output": "Tapped @e8 (821, 1645)\n"}
+{"utc": "2026-10-10T20:48:06.518854+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\"\n"}
+{"utc": "2026-10-10T20:48:07.003334+00:00", "args": ["click", "@e7"]}
+{"exit": 0, "output": "Tapped @e7 (974, 333)\n"}
+{"utc": "2026-10-10T20:48:07.436616+00:00", "args": ["longpress", "220", "1170", "800"]}
+{"exit": 0, "output": "Long pressed (220, 1170)\n"}
+{"utc": "2026-10-10T20:48:08.930227+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:48:09.281809+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (180, 1100)\n"}
+{"utc": "2026-10-10T20:48:09.693813+00:00", "args": ["gesture", "pan", "397", "1260", "380", "175", "1500"]}
+{"exit": 0, "output": "Panned (397, 1260) by (380, 175)\n"}
+{"utc": "2026-10-10T20:48:12.179885+00:00", "args": ["click", "350", "1040"]}
+{"exit": 0, "output": "Tapped (350, 1040)\n"}
+{"utc": "2026-10-10T20:48:12.649542+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 8 visible nodes (15 total)\nCollapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Dictionary lookup\"\n@e4 [group] \"Highlight\"\n@e6 [group] \"Annotation note\"\n@e8 [group] \"Back to handles\"\n@e10 [group] \"Dismiss selection\"\n@e12 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e13 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:48:18.313426+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (217, 1729)\n"}
+{"utc": "2026-10-10T20:48:18.765394+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/same-page-refreshed-lookup.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/same-page-refreshed-lookup.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:48:20.450812+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 10 visible nodes (21 total)\nCollapsed 11 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [text-field] \"canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan\" [editable]\n@e12 [text] \"Lookup text\"\n@e13 [group] \"Source: es\"\n@e15 [group] \"Target: es\"\n@e18 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e19 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:48:20.958898+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (485, 1100)\n"}
+{"utc": "2026-10-10T20:48:21.453925+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 8 visible nodes (15 total)\nCollapsed 7 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Dictionary lookup\"\n@e4 [group] \"Highlight\"\n@e6 [group] \"Annotation note\"\n@e8 [group] \"Back to handles\"\n@e10 [group] \"Dismiss selection\"\n@e12 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e13 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:48:22.218372+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (205, 1981)\n"}
+{"utc": "2026-10-10T20:48:22.734014+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (15 total)\nCollapsed 6 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"\u2713 Yellow\"\n@e4 [group] \"Aqua\"\n@e6 [group] \"Pink\"\n@e8 [group] \"Green\"\n@e10 [text-field] [editable]\n@e11 [text] \"Annotation note\"\n@e12 [group] \"Save\"\n@e14 [group] \"Cancel\"\n"}
+{"utc": "2026-10-10T20:48:30.722189+00:00", "args": ["fill", "@e10", "issue-10 same-page control"]}
+{"exit": 0, "output": "Filled 26 chars\n"}
+{"utc": "2026-10-10T20:48:31.743189+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (15 total)\nCollapsed 6 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"\u2713 Yellow\"\n@e4 [group] \"Aqua\"\n@e6 [group] \"Pink\"\n@e8 [group] \"Green\"\n@e10 [text-field] \"issue-10 same-page control\" [focused] [editable]\n@e11 [text] \"Annotation note\"\n@e12 [group] \"Save\"\n@e14 [group] \"Cancel\"\n"}
+{"utc": "2026-10-10T20:48:32.069128+00:00", "args": ["click", "@e12"]}
+{"exit": 0, "output": "Tapped @e12 (821, 1646)\n"}
+{"utc": "2026-10-10T20:48:33.808439+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:48:37.018709+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/annotation-restart.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/annotation-restart.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:48:44.374808+00:00", "args": ["click", "540", "900"]}
+{"exit": 0, "output": "Tapped (540, 900)\n"}
+{"utc": "2026-10-10T20:48:44.770833+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\" [focused]\n"}
+{"utc": "2026-10-10T20:48:45.237204+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (596, 333)\n"}
+{"utc": "2026-10-10T20:48:45.711044+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:46.820137+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (356, 1057)\n"}
+{"utc": "2026-10-10T20:48:49.216523+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:49.476274+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (540, 1330)\n"}
+{"utc": "2026-10-10T20:48:51.862091+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:52.612920+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/reflow-settings.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/reflow-settings.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:48:54.243221+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:48:54.672538+00:00", "args": ["click", "@e8"]}
+{"exit": 0, "output": "Tapped @e8 (821, 1645)\n"}
+{"utc": "2026-10-10T20:48:55.114961+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\"\n"}
+{"utc": "2026-10-10T20:48:55.518382+00:00", "args": ["click", "@e7"]}
+{"exit": 0, "output": "Tapped @e7 (974, 333)\n"}
+{"utc": "2026-10-10T20:48:55.907941+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/annotation-reflow.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/annotation-reflow.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:48:57.829270+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:49:00.848177+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/annotation-reflow-restart.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/annotation-reflow-restart.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:49:07.468859+00:00", "args": ["click", "540", "900"]}
+{"exit": 0, "output": "Tapped (540, 900)\n"}
+{"utc": "2026-10-10T20:49:07.860280+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\" [focused]\n"}
+{"utc": "2026-10-10T20:49:08.318223+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (596, 333)\n"}
+{"utc": "2026-10-10T20:49:08.840128+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:49:09.953523+00:00", "args": ["click", "@e4"]}
+{"exit": 0, "output": "Tapped @e4 (724, 1057)\n"}
+{"utc": "2026-10-10T20:49:12.336701+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use narrower margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:49:12.596348+00:00", "args": ["click", "@e6"]}
+{"exit": 0, "output": "Tapped @e6 (540, 1330)\n"}
+{"utc": "2026-10-10T20:49:15.060211+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 5 visible nodes (9 total)\nCollapsed 4 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n@e2 [group] \"Smaller\"\n@e4 [group] \"Larger\"\n@e6 [group] \"Use wider margins\"\n@e8 [group] \"Done\"\n"}
+{"utc": "2026-10-10T20:49:15.321213+00:00", "args": ["click", "@e8"]}
+{"exit": 0, "output": "Tapped @e8 (821, 1645)\n"}
+{"utc": "2026-10-10T20:49:15.802402+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 9 visible nodes (12 total)\nCollapsed 3 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [button] \"Library\"\n@e2 [group] \"Typography, Aa\"\n@e5 [button] \"Add bookmark\"\n@e6 [button] \"More reader options\"\n@e7 [button] \"Close controls\"\n@e8 [group] \"Return to 58%\"\n@e10 [seekbar] \"Reading position preview slider\"\n@e12 [webview] \"dev.reader.ldx:id/webView\"\n"}
+{"utc": "2026-10-10T20:49:16.195228+00:00", "args": ["click", "@e7"]}
+{"exit": 0, "output": "Tapped @e7 (974, 333)\n"}
+{"utc": "2026-10-10T20:49:21.739911+00:00", "args": ["longpress", "730", "2090", "800"]}
+{"exit": 0, "output": "Long pressed (730, 2090)\n"}
+{"utc": "2026-10-10T20:49:23.187876+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:49:23.766045+00:00", "args": ["click", "@e2"]}
+{"exit": 0, "output": "Tapped @e2 (180, 1100)\n"}
+{"utc": "2026-10-10T20:49:24.142020+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/active-handle-ready.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-handle-ready.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:49:32.460617+00:00", "args": ["screenshot", "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-handle.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-handle.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:49:34.520657+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:49:37.663070+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/active-restored.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-restored.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:49:53.867307+00:00", "args": ["click", "1010", "900"]}
+{"exit": 0, "output": "Tapped (1010, 900)\n"}
+{"utc": "2026-10-10T20:49:54.271565+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/boundary-next-page.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/boundary-next-page.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:49:56.139679+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 nodes\n@e2 [webview] \"dev.reader.ldx:id/webView\" [focused]\n"}
+{"utc": "2026-10-10T20:50:15.263514+00:00", "args": ["click", "80", "900"]}
+{"exit": 0, "output": "Tapped (80, 900)\n"}
+{"utc": "2026-10-10T20:50:16.753900+00:00", "args": ["longpress", "730", "2090", "800"]}
+{"exit": 0, "output": "Long pressed (730, 2090)\n"}
+{"utc": "2026-10-10T20:50:18.202286+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 6 visible nodes (14 total)\nCollapsed 8 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [scroll-area] [scrollable]\n  [content below scroll-area hidden]\n@e2 [group] \"Close lookup\"\n@e4 [group] \"Passage actions\"\n@e6 [group] \"Change dictionary source. Wikcionario Espa\u00f1ol-Espa\u00f1ol, es to es, Wikcionario Espa\u00f1ol-Espa\u00f1ol, es \u2192 es, \u25be\"\n@e11 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e12 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:50:18.838034+00:00", "args": ["click", "text=\"Close lookup\""]}
+{"exit": 0, "output": "Tapped text=\"Close lookup\" (180, 1100)\n"}
+{"utc": "2026-10-10T20:50:19.262107+00:00", "args": ["gesture", "pan", "835", "2190", "230", "0", "2500"]}
+{"exit": 0, "output": "Panned (835, 2190) by (230, 0)\n"}
+{"utc": "2026-10-10T20:50:22.967558+00:00", "args": ["snapshot", "-i"]}
+{"exit": 0, "output": "Page: dev.reader.ldx\nApp: dev.reader.ldx\nSnapshot: 2 visible nodes (4 total)\nCollapsed 2 Android helper nodes from the agent-facing text snapshot; use --raw or --json for the full hierarchy.\n@e1 [group] \"Pasaje 2.11: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia., Pasaje 2.12: La viajera mira el jard\u00edn. Una canci\u00f3n recuerda el \u00e1rbol, mientras los ni\u00f1os caminan entre flores. Cada palabra tiene su lugar en esta historia.\"\n@e2 [webview] [focused]\n"}
+{"utc": "2026-10-10T20:50:30.489541+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/replay-final-selection.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/replay-final-selection.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:50:32.386778+00:00", "args": ["open", "dev.reader.ldx"]}
+{"exit": 0, "output": "Opened: dev.reader.ldx\nSession state: /home/camilo/.t3/userdata/device/agent-device/sessions/t3-d026bde05ce9e4bf68a6a3fa\n"}
+{"utc": "2026-10-10T20:50:35.443212+00:00", "args": ["screenshot", "docs/evidence/issue-10/runtime/replay-restored.png"]}
+{"exit": 0, "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/replay-restored.png (1080x2400)\n"}
+{"utc": "2026-10-10T20:50:49.357973+00:00", "args": ["close"]}
+{"exit": 0, "output": "Closed: t3-d026bde05ce9e4bf68a6a3fa\n"}

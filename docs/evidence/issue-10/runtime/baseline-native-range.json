@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-10T20:45:41.271Z",
+  "url": "https://readium/publication/EPUB/chapter2.xhtml",
+  "text": " mira el jardín. ",
+  "range": {
+    "startId": "p-2-12",
+    "startOffset": 23,
+    "endId": "p-2-12",
+    "endOffset": 40,
+    "rects": [
+      {
+        "x": 20,
+        "y": 616.8809814453125,
+        "width": 226.11309814453125,
+        "height": 37.71429443359375
+      }
+    ]
+  },
+  "viewport": {
+    "width": 411,
+    "height": 661,
+    "scrollLeft": 2880,
+    "scrollWidth": 6583
+  },
+  "font": "32px"
+}

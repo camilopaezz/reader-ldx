@@ -1,0 +1,46 @@
+{
+  "baseCommit": "6bf9887c1076afeee5e975206957691e859e6865",
+  "branch": "prototype/10-cross-page-selection",
+  "app": "dev.reader.ldx",
+  "appVersion": "0.1.0",
+  "versionCode": 1,
+  "baselineInstalledApkSha256": "33e3754eddb6590d0f0038dd6cc0a5510b4e1cfbfc084cf717033447dc7b6183",
+  "testedApkSha256": "ea459f8ad9c113aeb593873d759807f0b1dc3bfd167ba76fb9826b610bee8316",
+  "device": "emulator-5554 Dev_Pixel_8_API_36",
+  "android": "16 API36 x86_64",
+  "screen": [
+    1080,
+    2400
+  ],
+  "densityDpi": 420,
+  "webView": "153.0.8010.57",
+  "agentDevice": "0.21.23",
+  "deviceHub": "0.15.3",
+  "session": "t3-d026bde05ce9e4bf68a6a3fa",
+  "readium": "3.1.2",
+  "composeUiFoundation": "1.8.2",
+  "composeRuntime": "1.9.0",
+  "material3": "1.5.0-alpha02",
+  "room": "2.7.1",
+  "dataStore": "1.1.7",
+  "agp": "8.10.1",
+  "kotlin": "2.1.21",
+  "gradle": "8.14.1",
+  "jdk": "21.0.12.1+1",
+  "boundarySettings": {
+    "fontPercent": 200,
+    "pageMargins": 1,
+    "readerGuttersDp": 24
+  },
+  "reflowSettings": {
+    "fontPercent": 180,
+    "pageMargins": 2
+  },
+  "wifiOn": 0,
+  "mobileData": 0,
+  "internetPermission": false,
+  "leaseReleased": true,
+  "deviceSessionClosed": true,
+  "fixtureManifest": "fixtures/epub/manifest.json",
+  "dictionaryManifest": "fixtures/dictionaries/manifest.json"
+}

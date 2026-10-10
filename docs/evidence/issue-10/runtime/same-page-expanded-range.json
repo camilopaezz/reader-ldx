@@ -1,0 +1,64 @@
+{
+  "utc": "2026-10-10T20:47:20.791Z",
+  "url": "https://readium/publication/EPUB/chapter2.xhtml",
+  "text": "canción recuerda el árbol, mientras los niños caminan ",
+  "range": {
+    "startId": "p-2-11",
+    "startOffset": 44,
+    "endId": "p-2-11",
+    "endOffset": 98,
+    "rects": [
+      {
+        "x": 20,
+        "y": 264.58929443359375,
+        "width": 301.2976379394531,
+        "height": 37.71429443359375
+      },
+      {
+        "x": 20,
+        "y": 310.3452453613281,
+        "width": 284.9702453613281,
+        "height": 37.71429443359375
+      },
+      {
+        "x": 20,
+        "y": 356.1011962890625,
+        "width": 234.58334350585938,
+        "height": 37.71429443359375
+      }
+    ]
+  },
+  "viewport": {
+    "width": 411,
+    "height": 661,
+    "scrollLeft": 2880,
+    "scrollWidth": 6583
+  },
+  "font": "32px",
+  "overflow": {
+    "html": "visible",
+    "body": "visible"
+  },
+  "boundary": [
+    {
+      "word": "Una",
+      "element": "p-2-12",
+      "start": 40,
+      "end": 43,
+      "x": 246.10714721679688,
+      "y": 616.8809814453125,
+      "width": 61.6011962890625,
+      "height": 37.71429443359375
+    },
+    {
+      "word": "canción",
+      "element": "p-2-12",
+      "start": 44,
+      "end": 51,
+      "x": 431.4285888671875,
+      "y": 3.809523820877075,
+      "width": 119.5,
+      "height": 37.71428680419922
+    }
+  ]
+}

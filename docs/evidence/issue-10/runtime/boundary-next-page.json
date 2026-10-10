@@ -1,0 +1,52 @@
+{
+  "utc": "2026-10-10T20:49:56.040Z",
+  "url": "https://readium/publication/EPUB/chapter2.xhtml",
+  "text": "",
+  "range": {
+    "startId": "p-2-11",
+    "startOffset": 23,
+    "endId": "p-2-11",
+    "endOffset": 23,
+    "rects": [
+      {
+        "x": -55.244049072265625,
+        "y": 173.07737731933594,
+        "width": 0,
+        "height": 37.71429443359375
+      }
+    ]
+  },
+  "viewport": {
+    "width": 411,
+    "height": 661,
+    "scrollLeft": 3291.428466796875,
+    "scrollWidth": 6583
+  },
+  "font": "32px",
+  "overflow": {
+    "html": "visible",
+    "body": "visible"
+  },
+  "boundary": [
+    {
+      "word": "Una",
+      "element": "p-2-12",
+      "start": 40,
+      "end": 43,
+      "x": -165.32142639160156,
+      "y": 616.8809814453125,
+      "width": 61.60118865966797,
+      "height": 37.71429443359375
+    },
+    {
+      "word": "canción",
+      "element": "p-2-12",
+      "start": 44,
+      "end": 51,
+      "x": 20,
+      "y": 3.809523820877075,
+      "width": 119.5,
+      "height": 37.71428680419922
+    }
+  ]
+}

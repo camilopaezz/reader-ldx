@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
     private var typographyJob: Job? = null
     private var applyingTypography by mutableStateOf(false)
     private var nativeSelectionMode: ActionMode? = null
+    private var selectionModeCleanup: Job? = null
+    private var initialLookupShown = false
     // Feature tickets add actions here while leaving selection acquisition owned by the engine.
     val selectionActions = linkedMapOf<String, (Selection) -> Unit>()
     var onWordSelected: ((Selection) -> Unit)? = null
@@ -87,10 +89,23 @@ class MainActivity : AppCompatActivity() {
         engine.onCenterTap = { controls = !controls }
         engine.actionModeCallback = object : ActionMode.Callback {
             override fun onCreateActionMode(mode: ActionMode, menu: Menu): Boolean {
+                selectionModeCleanup?.cancel()
                 nativeSelectionMode = mode
+                android.util.Log.i("ReaderEvidence", "SELECTION_MODE_CREATE initialLookupShown=$initialLookupShown")
                 menu.clear()
                 menu.add(0, 1, 0, "Passage actions")
-                lifecycleScope.launch { delay(100); engine.refreshSelection()?.let { onWordSelected?.invoke(it) } }
+                lifecycleScope.launch {
+                    delay(100)
+                    if (nativeSelectionMode !== mode) return@launch
+                    engine.refreshSelection()?.let {
+                        // WebView recreates ActionMode when a handle drag finishes. That
+                        // is still the same selection, not another held word.
+                        if (!initialLookupShown) {
+                            initialLookupShown = true
+                            onWordSelected?.invoke(it)
+                        }
+                    }
+                }
                 return true
             }
             override fun onPrepareActionMode(mode: ActionMode, menu: Menu): Boolean = false
@@ -98,7 +113,21 @@ class MainActivity : AppCompatActivity() {
                 lifecycleScope.launch { dictionaryOpen = false; selectionInfo = engine.refreshSelection() }
                 return true
             }
-            override fun onDestroyActionMode(mode: ActionMode) { nativeSelectionMode = null; selectionInfo = null; engine.selection.value = null }
+            override fun onDestroyActionMode(mode: ActionMode) {
+                if (nativeSelectionMode !== mode) return
+                nativeSelectionMode = null
+                selectionInfo = null
+                android.util.Log.i("ReaderEvidence", "SELECTION_MODE_DESTROY")
+                selectionModeCleanup = lifecycleScope.launch {
+                    // Allow native handle movement to replace the floating toolbar.
+                    // End the episode only when the DOM range has actually gone away.
+                    delay(150)
+                    if (nativeSelectionMode == null && engine.refreshSelection() == null) {
+                        initialLookupShown = false
+                        android.util.Log.i("ReaderEvidence", "SELECTION_EPISODE_END")
+                    }
+                }
+            }
         }
         val root = FrameLayout(this)
         // Reserve space in the native viewport, not in EPUB paragraphs: a paragraph
@@ -142,6 +171,8 @@ class MainActivity : AppCompatActivity() {
         try { block() } catch (e: Exception) { message = e.message ?: "Operation failed"; android.util.Log.e("ReaderEvidence", message, e) }
     }
     private suspend fun open(book: BookRecord) {
+        selectionModeCleanup?.cancel()
+        initialLookupShown = false
         engine.open(book, containerId, size, margins)
         slider.opened()
         opened = book; library = false; controls = false; topPanel = null; selectionInfo = null; dictionaryOpen = false

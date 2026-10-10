@@ -1,0 +1,84 @@
+[
+  {
+    "utc": "2026-10-10T20:49:32.355789+00:00",
+    "argv": [
+      "adb",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "input",
+      "motionevent",
+      "DOWN",
+      "835",
+      "2190"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "utc": "2026-10-10T20:49:32.378777+00:00",
+    "argv": [
+      "adb",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "input",
+      "motionevent",
+      "MOVE",
+      "1030",
+      "2190"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "utc": "2026-10-10T20:49:32.428437+00:00",
+    "argv": [
+      "python3",
+      "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/device.py",
+      "screenshot",
+      "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-handle.png"
+    ],
+    "exit": 0,
+    "output": "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/runtime/active-handle.png (1080x2400)\n\n"
+  },
+  {
+    "utc": "2026-10-10T20:49:34.134698+00:00",
+    "argv": [
+      "node",
+      "/home/camilo/.t3/worktrees/reader-ldx/prototype-10-cross-page-selection/docs/evidence/issue-10/inspect-selection.mjs"
+    ],
+    "exit": 0,
+    "output": "{\n  \"utc\": \"2026-10-10T20:49:34.282Z\",\n  \"url\": \"https://readium/publication/EPUB/chapter2.xhtml\",\n  \"text\": \"Una\",\n  \"range\": {\n    \"startId\": \"p-2-12\",\n    \"startOffset\": 40,\n    \"endId\": \"p-2-12\",\n    \"endOffset\": 43,\n    \"rects\": [\n      {\n        \"x\": 246.10714721679688,\n        \"y\": 616.8809814453125,\n        \"width\": 61.6011962890625,\n        \"height\": 37.71429443359375\n      }\n    ]\n  },\n  \"viewport\": {\n    \"width\": 411,\n    \"height\": 661,\n    \"scrollLeft\": 2880,\n    \"scrollWidth\": 6583\n  },\n  \"font\": \"32px\",\n  \"overflow\": {\n    \"html\": \"visible\",\n    \"body\": \"visible\"\n  },\n  \"boundary\": [\n    {\n      \"word\": \"Una\",\n      \"element\": \"p-2-12\",\n      \"start\": 40,\n      \"end\": 43,\n      \"x\": 246.10714721679688,\n      \"y\": 616.8809814453125,\n      \"width\": 61.6011962890625,\n      \"height\": 37.71429443359375\n    },\n    {\n      \"word\": \"canci\u00f3n\",\n      \"element\": \"p-2-12\",\n      \"start\": 44,\n      \"end\": 51,\n      \"x\": 431.4285888671875,\n      \"y\": 3.809523820877075,\n      \"width\": 119.5,\n      \"height\": 37.71428680419922\n    }\n  ]\n}\n"
+  },
+  {
+    "utc": "2026-10-10T20:49:34.309330+00:00",
+    "argv": [
+      "adb",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "am",
+      "force-stop",
+      "dev.reader.ldx"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "utc": "2026-10-10T20:49:34.391643+00:00",
+    "argv": [
+      "adb",
+      "-s",
+      "emulator-5554",
+      "shell",
+      "input",
+      "motionevent",
+      "UP",
+      "1030",
+      "2190"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

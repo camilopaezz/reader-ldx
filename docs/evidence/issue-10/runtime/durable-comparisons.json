@@ -1,0 +1,22 @@
+{
+  "fixed-source -> fixed-edge-after committed": true,
+  "fixed-source -> fixed-edge-after Return": true,
+  "active-source -> active-restored committed": true,
+  "active-source -> active-restored Return": true,
+  "active-source -> active-restored annotations": true,
+  "annotation-saved -> annotation-restarted committed": true,
+  "annotation-saved -> annotation-restarted Return": true,
+  "annotation-saved -> annotation-restarted annotations": true,
+  "annotation-saved -> annotation-reflow-restart committed": true,
+  "annotation-saved -> annotation-reflow-restart Return": true,
+  "annotation-saved -> annotation-reflow-restart annotations": true,
+  "replay-source -> replay-selected committed": true,
+  "replay-source -> replay-selected Return": true,
+  "replay-source -> replay-selected annotations": true,
+  "replay-source -> replay-restored committed": true,
+  "replay-source -> replay-restored Return": true,
+  "replay-source -> replay-restored annotations": true,
+  "active force-stop before UP": true,
+  "offline": true,
+  "replay immediate lookup / dismissed panel": true
+}
